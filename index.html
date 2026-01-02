@@ -1,0 +1,461 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>黄昏のルカと暁のエルフ -Anti-Gravity Saga-</title>
+    <meta name="description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;600;700&family=Outfit:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Serif JP', serif;
+            background-color: #f8f9fa;
+            color: #2d3748;
+        }
+
+        .font-eng {
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.6);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.6);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .glass-card:hover {
+            background: rgba(255, 255, 255, 0.9);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+
+        .fade-in-up {
+            animation: fadeInUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .text-shadow {
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .scroll-indicator {
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+
+            0%,
+            20%,
+            50%,
+            80%,
+            100% {
+                transform: translateY(0);
+            }
+
+            40% {
+                transform: translateY(-10px);
+            }
+
+            60% {
+                transform: translateY(-5px);
+            }
+        }
+
+        .profile-stat-row {
+            display: flex;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0.75rem 0;
+        }
+
+        .profile-stat-label {
+            width: 30%;
+            font-weight: 700;
+            color: #718096;
+            font-size: 0.875rem;
+        }
+
+        .profile-stat-value {
+            width: 70%;
+            color: #2d3748;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+
+<body class="antialiased overflow-x-hidden w-full">
+
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="./images/world_forest.jpg" alt="Anti-Gravity Saga Hero"
+                class="w-full h-full object-cover scale-105 filter brightness-90">
+            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#f8f9fa]"></div>
+        </div>
+
+        <div class="relative z-10 text-center p-8 md:p-12 glass-panel rounded-3xl max-w-5xl mx-4 fade-in-up mt-10">
+            <div class="inline-block border border-gray-400 px-4 py-1 rounded-full mb-6">
+                <p class="text-xs md:text-sm tracking-[0.3em] font-eng text-gray-600 uppercase">Original Animation
+                    Project</p>
+            </div>
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 text-gray-800 leading-tight tracking-tight">
+                黄昏のルカと<br>暁のエルフ
+                <span class="block text-xl md:text-2xl mt-4 font-eng font-light text-gray-600 tracking-wider">-
+                    Anti-Gravity Saga -</span>
+            </h1>
+            <p
+                class="text-base md:text-lg lg:text-xl mb-10 leading-relaxed max-w-3xl mx-auto text-gray-700 font-medium">
+                重力が眠る、黄昏の箱庭。<br>
+                失われた「重さ」を探す、少年とエルフの旅路。
+            </p>
+        </div>
+
+        <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-400 scroll-indicator">
+            <p class="text-xs font-eng tracking-widest mb-2">SCROLL</p>
+            <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3">
+                </path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Prologue / Story Section -->
+    <section id="story" class="py-24 px-4 bg-gradient-to-br from-[#f8f9fa] to-[#e6e9f0]">
+        <div class="max-w-6xl mx-auto">
+            <div class="flex flex-col md:flex-row gap-12 items-center">
+                <div class="md:w-1/2 fade-in-up">
+                    <span
+                        class="font-eng text-blue-500 tracking-widest text-sm font-bold uppercase mb-4 block">Prologue</span>
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-8 leading-snug">
+                        邂逅の森<br>
+                        <span class="text-xl text-gray-500 font-normal">The Meeting in the Forest of Giants</span>
+                    </h2>
+                    <div class="space-y-6 text-gray-700 leading-loose text-justify">
+                        <p>
+                            巨大な機械の残骸が樹木と絡み合い、淡い光を放つ苔が辺りを照らす<strong>「巨鋼の森」</strong>。
+                            危険地帯であるこの森の奥深くで、スカベンジャーの少年・ルカは倒れている少女を見つける。
+                        </p>
+                        <p>
+                            透き通るような銀髪と、長い耳。それは、この世界ではお伽話の中でしか語られない存在――<strong>エルフ</strong>だった。
+                            記憶を失い、怯える彼女を守るため、ルカは錆びついた銃を握りしめる。
+                        </p>
+                        <p class="text-xl font-bold text-gray-800 italic my-6">
+                            「君は……空から落ちてきたの？」
+                        </p>
+                        <p>
+                            孤独な少年の灰色の日々は、この出会いによって鮮やかに色づき始める。
+                            それは、止まっていた世界の時間が、再び動き出す合図でもあった。
+                        </p>
+                    </div>
+                </div>
+                <div class="md:w-1/2 relative group fade-in-up" style="animation-delay: 0.2s;">
+                    <div
+                        class="absolute inset-2 bg-green-200 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition duration-700">
+                    </div>
+                    <img src="./images/world_forest.jpg" alt="Meeting Forest"
+                        class="relative rounded-2xl shadow-2xl transform transition hover:rotate-1 hover:scale-[1.01] duration-500 border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World & Locations Section -->
+    <section id="world" class="py-24 px-4 bg-white relative border-b border-gray-100">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-20 fade-in-up">
+                <span class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">World
+                    Setting</span>
+                <h2 class="text-4xl font-bold text-gray-800">Gravity Fall - 重力の箱庭</h2>
+                <div class="w-20 h-1 bg-blue-400 mx-auto mt-6"></div>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Location 1 -->
+                <div class="glass-card p-6 rounded-2xl fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
+                        <img src="./images/world_house.jpg" alt="Martha's Diner"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-eng">
+                            LOCATION 01</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">マーサの食堂（ルカの家）</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        古代の遺跡を改装して作られた、街外れの小さな食堂。
+                        壁には収集されたガラクタや修理中の機械部品が所狭しと並ぶ。
+                        暖色のランプが灯るこの場所は、ルカにとって唯一の「帰る場所」である。
+                    </p>
+                </div>
+                <!-- Location 2 -->
+                <div class="glass-card p-6 rounded-2xl fade-in-up" style="animation-delay: 0.2s;">
+                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
+                        <img src="./images/world_lookdev.jpg" alt="Gravity Fall"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-eng">
+                            PHENOMENON</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">重力崩壊（グラビティ・フォール）</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        数百午前に世界を襲った大災害。
+                        地表の重力バランスが崩壊し、大陸の多くが空へと浮上した。
+                        空に浮かぶ島々は、太古の鎖や植物の根によって辛うじて繋ぎ止められている。
+                    </p>
+                </div>
+                <!-- Keyword -->
+                <div class="glass-card p-6 rounded-2xl fade-in-up border-l-4 border-l-blue-400 bg-blue-50/50"
+                    style="animation-delay: 0.3s;">
+                    <div class="h-48 mb-6 flex items-center justify-center bg-white rounded-xl text-blue-300">
+                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">反重力（Anit-Gravity）</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        物理的な浮力だけでなく、「心の重荷を解き放つ力」のメタファー。
+                        物語の終盤、ルカの覚醒と共に発現する「大切な人を守るための力」。
+                        世界を元の姿に戻す鍵と言われている。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character 1: Luca -->
+    <section class="py-24 px-4 bg-gray-50 relative border-b border-gray-200">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Main
+                    Character 01</span>
+                <h2 class="text-4xl font-bold text-gray-800">ルカ（Luca）</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-start fade-in-up">
+                <!-- Visuals -->
+                <div class="lg:w-1/2 w-full space-y-4">
+                    <img src="./images/luca_concept.jpg" alt="Luca Main" class="w-full rounded-2xl shadow-xl">
+                    <p class="text-xs text-center text-gray-500 font-eng">Concept Art: Scavenger Gear</p>
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="./images/luca_expressions.jpg" alt="Exp 1" class="rounded-lg shadow-sm">
+                        <img src="./images/luca_silua_adjust.jpg" alt="Exp 2"
+                            class="rounded-lg shadow-sm object-cover object-top h-32 w-full">
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="lg:w-1/2 w-full">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 font-eng">The Boy in the Parka</h3>
+                    <p class="text-blue-600 font-bold mb-8">「どうせ今日も、変わらない一日だと思っていた」</p>
+
+                    <p class="text-gray-700 leading-loose mb-8 text-justify">
+                        古びた大きめのパーカーを深く被り、表情を隠すように生きる少年。
+                        重力崩壊後の世界で、かつての文明の遺物（ジャンク）を回収する「スカベンジャー」として生活している。
+                        年齢に見合わない達観と、深い憂いをその瞳に宿す。
+                        機械いじりの天才的な才能を持ち、構造を即座に理解して修理することができるが、それは生きるための手段でしかないと考えている。
+                    </p>
+
+                    <div class="bg-white rounded-xl p-6 shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-800 mb-4 border-b border-gray-100 pb-2">Profile Data</h4>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Age</div>
+                            <div class="profile-stat-value">14 years old</div>
+                        </div>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Height</div>
+                            <div class="profile-stat-value">158 cm</div>
+                        </div>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Occupation</div>
+                            <div class="profile-stat-value">Scavenger (廃品回収屋)</div>
+                        </div>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Equipment</div>
+                            <div class="profile-stat-value">Multi-tool, Rusted Air-Gun</div>
+                        </div>
+                        <div class="profile-stat-row border-none">
+                            <div class="profile-stat-label">Weakness</div>
+                            <div class="profile-stat-value">Past Trauma, Crowds</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Character 2: Silua -->
+    <section class="py-24 px-4 bg-white relative border-b border-gray-100">
+        <div class="absolute inset-0 z-0 opacity-5 bg-[url('./images/world_forest.jpg')] bg-cover bg-center"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Main
+                    Character 02</span>
+                <h2 class="text-4xl font-bold text-gray-800">シルア（Silua）</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row-reverse gap-12 items-start fade-in-up">
+                <!-- Visuals -->
+                <div class="lg:w-1/2 w-full space-y-4">
+                    <div class="h-96 overflow-hidden rounded-2xl shadow-xl relative">
+                        <!-- Crop to show Silua mostly from the multi or adjust image -->
+                        <img src="./images/multi_expressions.jpg" alt="Silua Main"
+                            class="w-full h-full object-cover object-top">
+                    </div>
+                    <p class="text-xs text-center text-gray-500 font-eng">Interaction & Expressions</p>
+                </div>
+
+                <!-- Info -->
+                <div class="lg:w-1/2 w-full">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-2 font-eng">The Elf of the Dawn</h3>
+                    <p class="text-yellow-600 font-bold mb-8">「世界の時間は、まだ止まってないよ」</p>
+
+                    <p class="text-gray-700 leading-loose mb-8 text-justify">
+                        透き通るような銀髪と長い耳を持つ、エルフの少女。
+                        森の奥深くで眠っていたところをルカに保護される。
+                        記憶の多くを失っているが、世界に対して純粋な好奇心と希望を抱いている。
+                        彼女が口ずさむ不思議な「歌」は、周囲の重力場に微細な干渉を起こす力（重力魔法）があるが、本人は無自覚。
+                        その存在自体が、この世界の「再生」の鍵を握っている。
+                    </p>
+
+                    <div class="bg-gray-50 rounded-xl p-6 shadow-sm border border-gray-200">
+                        <h4 class="font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Profile Data</h4>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Age</div>
+                            <div class="profile-stat-value">Unknown (Looks 14)</div>
+                        </div>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Race</div>
+                            <div class="profile-stat-value">Elf</div>
+                        </div>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Speciality</div>
+                            <div class="profile-stat-value">Singing, Gravity Magic</div>
+                        </div>
+                        <div class="profile-stat-row">
+                            <div class="profile-stat-label">Favorite</div>
+                            <div class="profile-stat-value">Nature, Warm Soup</div>
+                        </div>
+                        <div class="profile-stat-row border-none">
+                            <div class="profile-stat-label">Goal</div>
+                            <div class="profile-stat-value">Recovering Memories</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Sub Characters -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12 fade-in-up">
+                <h3 class="text-2xl font-bold text-gray-600">Supporting Characters</h3>
+            </div>
+            <div class="grid md:grid-cols-2 gap-8">
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 fade-in-up">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-3xl">
+                            👵</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 border-b border-orange-200 pb-1 inline-block">
+                                マーサ（Martha）</h4>
+                            <p class="text-xs text-gray-500 mt-1 font-eng">The Foster Mother</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        ルカの育ての親であり、遺跡を利用した食堂の店主。
+                        口は悪いが愛情深く、孤児となったルカを引き取り育ててきた。
+                        かつては凄腕のトレジャーハンターだったという噂があり、ルカに銃の扱いを教えたのも彼女。
+                        街の顔役としても慕われている。
+                    </p>
+                </div>
+
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 fade-in-up"
+                    style="animation-delay: 0.1s;">
+                    <div class="flex items-center gap-4 mb-4">
+                        <div
+                            class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-3xl">
+                            🧝‍♀️</div>
+                        <div>
+                            <h4 class="text-xl font-bold text-gray-800 border-b border-blue-200 pb-1 inline-block">
+                                リリア（Lilia）</h4>
+                            <p class="text-xs text-gray-500 mt-1 font-eng">The Ancient Mage</p>
+                        </div>
+                    </div>
+                    <p class="text-gray-600 text-sm leading-relaxed">
+                        シルアの母。賢きエルフであり、かつての魔法の指導者。
+                        重力崩壊の謎を知る数少ない人物の一人だが、現在は行方不明。
+                        シルアの記憶の断片に現れ、彼女を導く存在。
+                        その魔力は「暁」のように世界を照らすと言われていた。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Concept Section (Shortened) -->
+    <section class="py-20 px-4 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto text-center">
+            <h3 class="text-xl font-bold mb-6 font-eng text-gray-800 tracking-[0.2em]">PROJECT VISION</h3>
+            <p class="text-gray-600 leading-relaxed max-w-2xl mx-auto mb-8">
+                <strong>「喪失と再生」</strong>、そして<strong>「心と重力」</strong>。<br>
+                物理的な現象と心理描写をリンクさせた、新しいファンタジー体験。<br>
+                水彩画のタッチで描かれる、美しくも切ない世界の物語。
+            </p>
+            <a href="#"
+                class="inline-block px-8 py-3 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100 transition font-eng text-sm">
+                CONTACT FOR INQUIRIES
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-[#1a202c] text-white py-12">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-2xl font-bold mb-2 font-eng">Anti-Gravity Saga</h2>
+            <p class="text-xs text-gray-500 font-eng tracking-widest mt-8">
+                &copy; 2026 Anti-Gravity Saga Project. All rights reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Use Intersection Observer for fade-in animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: "0px 0px -50px 0px"
+        };
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+    </script>
+</body>
+
+</html>
