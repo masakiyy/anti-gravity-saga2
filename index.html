@@ -1088,17 +1088,24 @@
                 <p class="text-gray-600 mb-6 leading-relaxed text-sm">
                     クラウドファンディング開始・新章公開・イベント情報を<br>いち早くメールでお届けします。
                 </p>
-                <!-- TODO: Mailchimp/Sendinblue等のフォームURLに置き換え -->
-                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); document.getElementById('newsletter-thanks').classList.remove('hidden'); this.classList.add('hidden');">
-                    <input type="email" required placeholder="メールアドレス"
+                <!-- Mailchimp連携フォーム -->
+                <form id="newsletter-form"
+                    action="https://app.us1.list-manage.com/subscribe/post?u=dbeca292a4ce95c6d1e1637d8&amp;id=89b116382a&amp;f_id=001dabe1f0"
+                    method="post" target="_blank"
+                    class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
+                    <input type="email" name="EMAIL" required placeholder="メールアドレス"
                         class="flex-1 px-4 py-3 rounded-full border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-transparent">
+                    <!-- Mailchimpボットトラップ（非表示） -->
+                    <div aria-hidden="true" style="position: absolute; left: -5000px;">
+                        <input type="text" name="b_dbeca292a4ce95c6d1e1637d8_89b116382a" tabindex="-1" value="">
+                    </div>
                     <button type="submit"
                         class="px-6 py-3 bg-indigo-500 text-white rounded-full text-sm font-bold hover:bg-indigo-600 transition shadow-md">
                         登録する
                     </button>
                 </form>
                 <div id="newsletter-thanks" class="hidden mt-4 text-indigo-600 font-bold text-sm">
-                    登録ありがとうございます（※ 現在フォーム準備中 - Mailchimp連携後に有効化されます）
+                    登録ありがとうございます！
                 </div>
                 <p class="text-xs text-gray-400 mt-3">スパムは送りません。配信停止はいつでも可能です。</p>
             </div>
@@ -1191,36 +1198,22 @@
             </div>
 
             <!-- giscus コメントウィジェット -->
-            <!-- ⚠️ 設定手順: https://giscus.app/ でrepo/category IDを取得してdata属性を更新してください -->
             <script src="https://giscus.app/client.js"
-                data-repo="GITHUB_OWNER/REPO_NAME"
-                data-repo-id="REPO_ID"
+                data-repo="masakiyy/anti-gravity-saga2"
+                data-repo-id="R_kgDORz74Jg"
                 data-category="General"
-                data-category-id="CATEGORY_ID"
+                data-category-id="DIC_kwDORz74Js4C5jMd"
                 data-mapping="pathname"
                 data-strict="0"
                 data-reactions-enabled="1"
                 data-emit-metadata="0"
-                data-input-position="top"
-                data-theme="light"
+                data-input-position="bottom"
+                data-theme="preferred_color_scheme"
                 data-lang="ja"
                 data-loading="lazy"
                 crossorigin="anonymous"
                 async>
             </script>
-
-            <!-- giscus未設定時のフォールバック表示 -->
-            <div id="giscus-setup-notice" class="mt-8 text-center">
-                <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-left max-w-2xl mx-auto">
-                    <h4 class="font-bold text-blue-800 mb-3">コメント機能の有効化手順</h4>
-                    <ol class="text-sm text-blue-700 space-y-2 list-decimal list-inside">
-                        <li>GitHubでパブリックリポジトリを作成する</li>
-                        <li>リポジトリの Settings → Features → <strong>Discussions</strong> をONにする</li>
-                        <li><a href="https://github.com/apps/giscus" target="_blank" class="underline font-bold">github.com/apps/giscus</a> からリポジトリにインストールする</li>
-                        <li><a href="https://giscus.app/" target="_blank" class="underline font-bold">giscus.app</a> でリポジトリを入力 → 生成されたdata属性をindex.htmlのscriptタグに貼り付ける</li>
-                    </ol>
-                </div>
-            </div>
         </div>
     </section>
 
@@ -1280,12 +1273,6 @@
             });
         });
 
-        // giscus設定済みの場合はセットアップ案内を非表示にする
-        const giscusScript = document.querySelector('script[src*="giscus.app"]');
-        if (giscusScript && !giscusScript.getAttribute('data-repo').includes('GITHUB_OWNER')) {
-            const notice = document.getElementById('giscus-setup-notice');
-            if (notice) notice.style.display = 'none';
-        }
 
         // スムーススクロール
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
