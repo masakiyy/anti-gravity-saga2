@@ -203,7 +203,7 @@
                 <a href="#world" class="nav-link text-gray-600 hover:text-gray-900">World</a>
                 <a href="#story-structure" class="nav-link text-gray-600 hover:text-gray-900">Structure</a>
                 <a href="#characters" class="nav-link text-gray-600 hover:text-gray-900">Characters</a>
-                <a href="#comments" class="nav-link text-gray-600 hover:text-gray-900">Comments</a>
+                <a href="#newsletter-section" class="px-4 py-1.5 bg-indigo-500 text-white rounded-full text-xs font-bold hover:bg-indigo-600 transition">Newsletter</a>
             </div>
             <!-- ハンバーガーボタン -->
             <button id="hamburger-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="メニュー">
@@ -220,7 +220,7 @@
                 <a href="#world" class="text-gray-600 hover:text-gray-900 py-1">World</a>
                 <a href="#story-structure" class="text-gray-600 hover:text-gray-900 py-1">Structure</a>
                 <a href="#characters" class="text-gray-600 hover:text-gray-900 py-1">Characters</a>
-                <a href="#comments" class="text-gray-600 hover:text-gray-900 py-1">Comments</a>
+                <a href="#newsletter-section" class="text-indigo-500 font-bold hover:text-indigo-700 py-1">Newsletter</a>
             </div>
         </div>
     </nav>
@@ -247,6 +247,16 @@
                 「空が落ちた世界で、君という引力に出会った。」<br>
                 <span class="text-sm md:text-base text-gray-500 mt-2 block">重力に縛られた少年と、無重力を信じるエルフの、静寂と再生の旅路。</span>
             </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="#story"
+                    class="px-8 py-3 bg-gray-800 text-white rounded-full text-sm font-bold hover:bg-gray-900 transition shadow-lg font-eng tracking-wider">
+                    EXPLORE THE STORY
+                </a>
+                <a href="#newsletter-section"
+                    class="px-8 py-3 bg-indigo-500 text-white rounded-full text-sm font-bold hover:bg-indigo-600 transition shadow-lg font-eng tracking-wider">
+                    GET UPDATES
+                </a>
+            </div>
         </div>
 
         <div class="absolute bottom-10 left-1/2 transform -translate-x-1/2 text-gray-400 scroll-indicator">
@@ -428,7 +438,7 @@
                     </div>
                     <h3 class="text-xl font-bold text-gray-800 mb-3">重力崩壊（グラビティ・フォール）</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
-                        数百午前に世界を襲った大災害。
+                        数百年前に世界を襲った大災害。
                         地表の重力バランスが崩壊し、大陸の多くが空へと浮上した。
                         空に浮かぶ島々は、太古の鎖や植物の根によって辛うじて繋ぎ止められている。
                     </p>
@@ -1012,6 +1022,18 @@
         </div>
     </section>
 
+    <!-- 中間CTA: ストーリー閲覧後の離脱防止 -->
+    <div class="py-12 px-4 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-center">
+        <div class="max-w-2xl mx-auto">
+            <p class="text-lg font-bold mb-2">物語の続きが気になりますか？</p>
+            <p class="text-sm opacity-90 mb-6">新章公開・クラウドファンディング開始時にメールでお知らせします。</p>
+            <a href="#newsletter-section"
+                class="inline-block px-8 py-3 bg-white text-indigo-600 rounded-full text-sm font-bold hover:bg-gray-100 transition shadow-lg">
+                最新情報を受け取る
+            </a>
+        </div>
+    </div>
+
     <!-- Sub Characters -->
     <section class="py-20 px-4 bg-gray-50">
         <div class="max-w-5xl mx-auto">
@@ -1078,7 +1100,7 @@
     </section>
 
     <!-- Newsletter + Support -->
-    <section class="py-20 px-4 bg-gradient-to-br from-indigo-50 to-purple-50 border-t border-indigo-100">
+    <section id="newsletter-section" class="py-20 px-4 bg-gradient-to-br from-indigo-50 to-purple-50 border-t border-indigo-100">
         <div class="max-w-4xl mx-auto">
 
             <!-- メール登録（最重要CTA） -->
@@ -1110,38 +1132,53 @@
                 <p class="text-xs text-gray-400 mt-3">スパムは送りません。配信停止はいつでも可能です。</p>
             </div>
 
-            <!-- 制作支援 -->
+            <!-- 制作支援ロードマップ -->
             <div class="fade-in-up">
-                <h3 class="text-2xl font-bold mb-4 text-gray-800 text-center">制作支援のお願い</h3>
-                <p class="text-gray-600 mb-8 leading-relaxed text-center">
-                    『黄昏のルカと暁のエルフ』は、皆様からのご支援によって制作されています。<br>
-                    物語の続きを紡ぐため、クラウドファンディングやファンクラブへのご参加をお待ちしております。
+                <h3 class="text-2xl font-bold mb-4 text-gray-800 text-center">制作ロードマップ</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed text-center text-sm">
+                    クラウドファンディング・ファンクラブの開設準備を進めています。<br>
+                    ニュースレターに登録いただくと、開設時にいち早くお知らせします。
                 </p>
 
-                <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto font-eng font-bold">
-                    <!-- TODO: クラウドファンディングページ開設後にhrefを実URLに差し替え -->
-                    <div class="relative overflow-hidden rounded-xl bg-green-500/60 text-white p-6 shadow-lg cursor-default">
-                        <div class="absolute top-2 right-2 bg-white/90 text-green-700 text-[10px] font-sans font-bold px-2 py-0.5 rounded-full">準備中</div>
-                        <span class="block text-2xl mb-1">Kickstarter</span>
-                        <span class="text-xs opacity-90 font-sans font-normal tracking-wider">GLOBAL SUPPORT</span>
+                <!-- ロードマップステップ -->
+                <div class="max-w-2xl mx-auto space-y-4">
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-green-200">
+                        <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">1</div>
+                        <div class="flex-1">
+                            <p class="font-bold text-gray-800 text-sm">公式サイト公開</p>
+                            <p class="text-xs text-green-600">完了</p>
+                        </div>
+                        <span class="text-green-500 text-lg">&#10003;</span>
                     </div>
-                    <div class="relative overflow-hidden rounded-xl bg-orange-500/60 text-white p-6 shadow-lg cursor-default">
-                        <div class="absolute top-2 right-2 bg-white/90 text-orange-700 text-[10px] font-sans font-bold px-2 py-0.5 rounded-full">準備中</div>
-                        <span class="block text-2xl mb-1">CAMPFIRE</span>
-                        <span class="text-xs opacity-90 font-sans font-normal tracking-wider">JAPAN SUPPORT</span>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-green-200">
+                        <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">2</div>
+                        <div class="flex-1">
+                            <p class="font-bold text-gray-800 text-sm">キャラクターデザイン・世界観設定</p>
+                            <p class="text-xs text-green-600">完了</p>
+                        </div>
+                        <span class="text-green-500 text-lg">&#10003;</span>
                     </div>
-                </div>
-
-                <div class="mt-6 flex justify-center gap-4 text-sm font-eng flex-wrap">
-                    <!-- TODO: 各サービス開設後にhrefを実URLに差し替え -->
-                    <span class="flex items-center gap-2 px-6 py-3 bg-white/50 border border-gray-200 rounded-full text-gray-400 cursor-default">
-                        <span class="w-2 h-2 bg-pink-300 rounded-full"></span>
-                        Pixiv FANBOX (準備中)
-                    </span>
-                    <span class="flex items-center gap-2 px-6 py-3 bg-white/50 border border-gray-200 rounded-full text-gray-400 cursor-default">
-                        <span class="w-2 h-2 bg-red-300 rounded-full"></span>
-                        Patreon (準備中)
-                    </span>
+                    <div class="flex items-center gap-4 bg-indigo-50 p-4 rounded-xl border-2 border-indigo-300">
+                        <div class="w-10 h-10 bg-indigo-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0 animate-pulse">3</div>
+                        <div class="flex-1">
+                            <p class="font-bold text-gray-800 text-sm">ストーリー全11章 執筆中</p>
+                            <p class="text-xs text-indigo-600">現在進行中</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200 opacity-60">
+                        <div class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">4</div>
+                        <div class="flex-1">
+                            <p class="font-bold text-gray-600 text-sm">クラウドファンディング開始（Kickstarter / CAMPFIRE）</p>
+                            <p class="text-xs text-gray-400">今後の予定</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200 opacity-60">
+                        <div class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">5</div>
+                        <div class="flex-1">
+                            <p class="font-bold text-gray-600 text-sm">ファンクラブ開設（Pixiv FANBOX / Patreon）</p>
+                            <p class="text-xs text-gray-400">今後の予定</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1159,16 +1196,11 @@
 
             <!-- SNSリンク -->
             <div class="flex justify-center gap-6 mb-8">
-                <!-- TODO: 各SNSアカウントのURLに置き換え -->
-                <a href="https://x.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition" aria-label="X (Twitter)">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                <a href="https://github.com/masakiyy/anti-gravity-saga2" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition flex items-center gap-2 text-sm" aria-label="GitHub">
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                    <span class="font-eng">GitHub</span>
                 </a>
-                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition" aria-label="Instagram">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-                </a>
-                <a href="https://github.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition" aria-label="GitHub">
-                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
-                </a>
+                <!-- X/Instagram: SNSアカウント開設後に有効化 -->
             </div>
 
             <!-- お問い合わせ -->
@@ -1218,13 +1250,77 @@
     </section>
 
     <footer class="bg-[#1a202c] text-white py-12">
-        <div class="max-w-6xl mx-auto px-4 text-center">
-            <h2 class="text-2xl font-bold mb-2 font-eng">Anti-Gravity Saga</h2>
-            <p class="text-xs text-gray-500 font-eng tracking-widest mt-8">
-                &copy; 2026 Anti-Gravity Saga Project. All rights reserved.
-            </p>
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="grid md:grid-cols-3 gap-8 mb-8">
+                <!-- ブランド -->
+                <div>
+                    <h2 class="text-xl font-bold mb-3 font-eng">Anti-Gravity Saga</h2>
+                    <p class="text-xs text-gray-400 leading-relaxed">
+                        重力が不安定な世界を舞台にした<br>少年とエルフの物語。
+                    </p>
+                </div>
+                <!-- サイトナビ -->
+                <div>
+                    <h4 class="text-sm font-bold mb-3 font-eng text-gray-300">NAVIGATION</h4>
+                    <div class="grid grid-cols-2 gap-2 text-xs text-gray-400">
+                        <a href="#story" class="hover:text-white transition">Story</a>
+                        <a href="#world" class="hover:text-white transition">World</a>
+                        <a href="#characters" class="hover:text-white transition">Characters</a>
+                        <a href="#story-structure" class="hover:text-white transition">Structure</a>
+                        <a href="#newsletter-section" class="hover:text-white transition">Newsletter</a>
+                        <a href="#comments" class="hover:text-white transition">Comments</a>
+                    </div>
+                </div>
+                <!-- 法的情報 -->
+                <div>
+                    <h4 class="text-sm font-bold mb-3 font-eng text-gray-300">LEGAL</h4>
+                    <div class="text-xs text-gray-400 space-y-2">
+                        <a href="mailto:yopy1030@gmail.com" class="hover:text-white transition block">Contact</a>
+                        <button onclick="document.getElementById('privacy-modal').classList.remove('hidden')" class="hover:text-white transition text-left">Privacy Policy</button>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-6 text-center">
+                <p class="text-xs text-gray-500 font-eng tracking-widest">
+                    &copy; 2026 Anti-Gravity Saga Project. All rights reserved.
+                </p>
+            </div>
         </div>
     </footer>
+
+    <!-- プライバシーポリシーモーダル -->
+    <div id="privacy-modal" class="hidden fixed inset-0 z-[100] bg-black/50 flex items-center justify-center p-4" onclick="if(event.target===this)this.classList.add('hidden')">
+        <div class="bg-white rounded-2xl max-w-lg w-full max-h-[80vh] overflow-y-auto p-8 relative">
+            <button onclick="document.getElementById('privacy-modal').classList.add('hidden')" class="absolute top-4 right-4 text-gray-400 hover:text-gray-700 text-2xl">&times;</button>
+            <h3 class="text-xl font-bold text-gray-800 mb-4">プライバシーポリシー</h3>
+            <div class="text-sm text-gray-600 space-y-4 leading-relaxed">
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-1">1. 収集する情報</h4>
+                    <p>ニュースレター登録時にメールアドレスをお預かりします。それ以外の個人情報は収集しません。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-1">2. 利用目的</h4>
+                    <p>お預かりしたメールアドレスは、本プロジェクトに関する新着情報（新章公開、クラウドファンディング開始等）の配信のみに使用します。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-1">3. 第三者提供</h4>
+                    <p>メール配信サービス（Mailchimp）を通じて配信を行います。それ以外の第三者への提供は行いません。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-1">4. 配信停止</h4>
+                    <p>配信メール内の「配信停止」リンクから、いつでも登録を解除できます。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-1">5. アクセス解析</h4>
+                    <p>Google Analytics（GA4）を使用してサイトのアクセス状況を匿名で収集しています。Cookieの使用を含みます。</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-gray-700 mb-1">6. お問い合わせ</h4>
+                    <p>プライバシーに関するお問い合わせは、<a href="mailto:yopy1030@gmail.com" class="text-indigo-500 underline">yopy1030@gmail.com</a> までご連絡ください。</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script>
         // Use Intersection Observer for fade-in animations
