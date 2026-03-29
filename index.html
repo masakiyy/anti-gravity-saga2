@@ -6,6 +6,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>黄昏のルカと暁のエルフ -Anti-Gravity Saga-</title>
     <meta name="description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。">
+    <meta name="keywords" content="Anti-Gravity Saga, 黄昏のルカと暁のエルフ, ファンタジー, 小説, アニメ, 重力崩壊, Web小説">
+    <link rel="canonical" href="https://anti-gravity-saga.vercel.app/">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://anti-gravity-saga.vercel.app/">
+    <meta property="og:title" content="黄昏のルカと暁のエルフ -Anti-Gravity Saga-">
+    <meta property="og:description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。">
+    <meta property="og:image" content="https://anti-gravity-saga.vercel.app/images/kv01_gray_daily.webp">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://anti-gravity-saga.vercel.app/">
+    <meta property="twitter:title" content="黄昏のルカと暁のエルフ -Anti-Gravity Saga-">
+    <meta property="twitter:description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。">
+    <meta property="twitter:image" content="https://anti-gravity-saga.vercel.app/images/kv01_gray_daily.webp">
+
+    <!-- Google Site Verification -->
+    <meta name="google-site-verification" content="wGWFuRq1PqAk6WHpxFlV8akOjI5iq_fXHpqCU4NQ8pU" />
+
+    <!-- Google Analytics (GA4) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9Z6ND0SBW"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-L9Z6ND0SBW');
+    </script>
+
+    <!-- 構造化データ (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "CreativeWork",
+        "name": "黄昏のルカと暁のエルフ -Anti-Gravity Saga-",
+        "description": "重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。",
+        "url": "https://anti-gravity-saga.vercel.app/",
+        "image": "https://anti-gravity-saga.vercel.app/images/kv01_gray_daily.webp",
+        "genre": ["Fantasy", "Adventure"],
+        "inLanguage": "ja",
+        "datePublished": "2026-01-03",
+        "dateModified": "2026-03-29",
+        "author": {
+            "@type": "Organization",
+            "name": "Anti-Gravity Saga Project"
+        }
+    }
+    </script>
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -101,17 +150,86 @@
             color: #2d3748;
             font-size: 0.9rem;
         }
+        /* 固定ナビゲーション */
+        .nav-fixed {
+            transform: translateY(-100%);
+            transition: transform 0.3s ease;
+        }
+        .nav-fixed.visible {
+            transform: translateY(0);
+        }
+        .nav-link {
+            position: relative;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #3b82f6;
+            transition: width 0.3s ease;
+        }
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        /* ハンバーガーメニュー */
+        .hamburger-line {
+            transition: all 0.3s ease;
+        }
+        .hamburger-open .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+        .hamburger-open .hamburger-line:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-open .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
     </style>
 </head>
 
 <body class="antialiased overflow-x-hidden w-full">
 
+    <!-- 固定ナビゲーション -->
+    <nav id="main-nav" class="nav-fixed fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
+        <div class="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
+            <a href="#hero" class="font-eng font-bold text-gray-800 text-sm tracking-wider">Anti-Gravity Saga</a>
+            <!-- デスクトップメニュー -->
+            <div class="hidden md:flex items-center gap-6 text-sm font-eng">
+                <a href="#story" class="nav-link text-gray-600 hover:text-gray-900">Story</a>
+                <a href="#world-map" class="nav-link text-gray-600 hover:text-gray-900">Map</a>
+                <a href="#world" class="nav-link text-gray-600 hover:text-gray-900">World</a>
+                <a href="#story-structure" class="nav-link text-gray-600 hover:text-gray-900">Structure</a>
+                <a href="#characters" class="nav-link text-gray-600 hover:text-gray-900">Characters</a>
+                <a href="#comments" class="nav-link text-gray-600 hover:text-gray-900">Comments</a>
+            </div>
+            <!-- ハンバーガーボタン -->
+            <button id="hamburger-btn" class="md:hidden flex flex-col gap-1.5 p-2" aria-label="メニュー">
+                <span class="hamburger-line w-5 h-0.5 bg-gray-700 block"></span>
+                <span class="hamburger-line w-5 h-0.5 bg-gray-700 block"></span>
+                <span class="hamburger-line w-5 h-0.5 bg-gray-700 block"></span>
+            </button>
+        </div>
+        <!-- モバイルメニュー -->
+        <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-gray-100">
+            <div class="flex flex-col py-4 px-6 gap-4 text-sm font-eng">
+                <a href="#story" class="text-gray-600 hover:text-gray-900 py-1">Story</a>
+                <a href="#world-map" class="text-gray-600 hover:text-gray-900 py-1">Map</a>
+                <a href="#world" class="text-gray-600 hover:text-gray-900 py-1">World</a>
+                <a href="#story-structure" class="text-gray-600 hover:text-gray-900 py-1">Structure</a>
+                <a href="#characters" class="text-gray-600 hover:text-gray-900 py-1">Characters</a>
+                <a href="#comments" class="text-gray-600 hover:text-gray-900 py-1">Comments</a>
+            </div>
+        </div>
+    </nav>
+
     <!-- Hero Section -->
-    <header class="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
-        <div class="absolute inset-0 z-0">
-            <img src="./images/world_forest.jpg" alt="Anti-Gravity Saga Hero"
-                class="w-full h-full object-cover scale-105 filter brightness-90">
-            <div class="absolute inset-0 bg-gradient-to-b from-black/10 via-transparent to-[#f8f9fa]"></div>
+    <header id="hero" class="relative w-full h-screen flex flex-col items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0 bg-gradient-to-br from-gray-50 to-gray-100">
+            <div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/cubes.png')] opacity-30">
+            </div>
         </div>
 
         <div class="relative z-10 text-center p-8 md:p-12 glass-panel rounded-3xl max-w-5xl mx-4 fade-in-up mt-10">
@@ -126,8 +244,8 @@
             </h1>
             <p
                 class="text-base md:text-lg lg:text-xl mb-10 leading-relaxed max-w-3xl mx-auto text-gray-700 font-medium">
-                重力が眠る、黄昏の箱庭。<br>
-                失われた「重さ」を探す、少年とエルフの旅路。
+                「空が落ちた世界で、君という引力に出会った。」<br>
+                <span class="text-sm md:text-base text-gray-500 mt-2 block">重力に縛られた少年と、無重力を信じるエルフの、静寂と再生の旅路。</span>
             </p>
         </div>
 
@@ -139,6 +257,14 @@
             </svg>
         </div>
     </header>
+
+    <!-- Ad Space: Below Hero — AdSense承認後にコメント解除 -->
+    <!-- <div class="py-8 bg-white flex justify-center border-b border-gray-100">
+        <div class="text-center w-full max-w-4xl mx-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="horizontal" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div> -->
 
     <!-- Prologue / Story Section -->
     <section id="story" class="py-24 px-4 bg-gradient-to-br from-[#f8f9fa] to-[#e6e9f0]">
@@ -173,8 +299,94 @@
                     <div
                         class="absolute inset-2 bg-green-200 rounded-2xl blur-xl opacity-40 group-hover:opacity-60 transition duration-700">
                     </div>
-                    <img src="./images/world_forest.jpg" alt="Meeting Forest"
+                    <img src="./images/scene_01_meeting.webp" alt="Meeting Forest" loading="lazy"
                         class="relative rounded-2xl shadow-2xl transform transition hover:rotate-1 hover:scale-[1.01] duration-500 border-4 border-white">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- World Map Section -->
+    <section id="world-map" class="py-24 px-4 bg-[#1a202c] relative overflow-hidden">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-12 fade-in-up">
+                <span class="font-eng text-blue-400 tracking-widest text-sm font-bold uppercase mb-2 block">World Map</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Gravity Fall - 世界全景</h2>
+                <div class="w-20 h-1 bg-blue-400 mx-auto mt-6"></div>
+            </div>
+            <div class="fade-in-up mb-12">
+                <img src="./images/world_map.webp" alt="World Map" loading="lazy"
+                    class="w-full rounded-2xl shadow-2xl border-2 border-gray-700">
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 fade-in-up">
+                <div class="bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700">
+                    <div class="text-2xl mb-2">🏚</div>
+                    <div class="text-sm font-bold text-gray-200">廃墟街</div>
+                    <div class="text-xs text-gray-400 mt-1">ルカの生活圏</div>
+                </div>
+                <div class="bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700">
+                    <div class="text-2xl mb-2">🌲</div>
+                    <div class="text-sm font-bold text-gray-200">巨鋼の森</div>
+                    <div class="text-xs text-gray-400 mt-1">機械と樹木の共生</div>
+                </div>
+                <div class="bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700">
+                    <div class="text-2xl mb-2">🏝</div>
+                    <div class="text-sm font-bold text-gray-200">浮遊群島</div>
+                    <div class="text-xs text-gray-400 mt-1">鎖と根で繋がる空の島々</div>
+                </div>
+                <div class="bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700">
+                    <div class="text-2xl mb-2">🗼</div>
+                    <div class="text-sm font-bold text-gray-200">アンカー塔</div>
+                    <div class="text-xs text-gray-400 mt-1">重力制御施設</div>
+                </div>
+                <div class="bg-gray-800/80 backdrop-blur-sm p-4 rounded-xl text-center border border-gray-700 col-span-2 md:col-span-1">
+                    <div class="text-2xl mb-2">🌿</div>
+                    <div class="text-sm font-bold text-gray-200">リリアの聖域</div>
+                    <div class="text-xs text-gray-400 mt-1">最奥の浮遊島</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Attributes -->
+    <section class="py-16 px-4 bg-white border-b border-gray-100">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10 fade-in-up">
+                <span class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Project
+                    Components</span>
+                <h2 class="text-2xl font-bold text-gray-800">作品成分</h2>
+            </div>
+
+            <div class="grid grid-cols-2 md:grid-cols-5 gap-4 fade-in-up">
+                <!-- Fantasy -->
+                <div class="bg-gray-50 p-4 rounded-xl text-center border border-gray-100">
+                    <div class="text-purple-500 mb-2">★★★★★</div>
+                    <div class="text-sm font-bold text-gray-700 font-eng">Fantasy</div>
+                    <div class="text-xs text-gray-500">ファンタジー</div>
+                </div>
+                <!-- Worldview -->
+                <div class="bg-gray-50 p-4 rounded-xl text-center border border-gray-100">
+                    <div class="text-blue-500 mb-2">★★★★★</div>
+                    <div class="text-sm font-bold text-gray-700 font-eng">Worldview</div>
+                    <div class="text-xs text-gray-500">世界観</div>
+                </div>
+                <!-- Healing -->
+                <div class="bg-gray-50 p-4 rounded-xl text-center border border-gray-100">
+                    <div class="text-green-500 mb-2">★★★★☆</div>
+                    <div class="text-sm font-bold text-gray-700 font-eng">Healing</div>
+                    <div class="text-xs text-gray-500">癒やし</div>
+                </div>
+                <!-- Serious -->
+                <div class="bg-gray-50 p-4 rounded-xl text-center border border-gray-100">
+                    <div class="text-gray-500 mb-2">★★★☆☆</div>
+                    <div class="text-sm font-bold text-gray-700 font-eng">Serious</div>
+                    <div class="text-xs text-gray-500">シリアス</div>
+                </div>
+                <!-- Action -->
+                <div class="bg-gray-50 p-4 rounded-xl text-center border border-gray-100">
+                    <div class="text-red-300 mb-2">★★☆☆☆</div>
+                    <div class="text-sm font-bold text-gray-700 font-eng">Action</div>
+                    <div class="text-xs text-gray-500">アクション</div>
                 </div>
             </div>
         </div>
@@ -194,7 +406,7 @@
                 <!-- Location 1 -->
                 <div class="glass-card p-6 rounded-2xl fade-in-up" style="animation-delay: 0.1s;">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
-                        <img src="./images/world_house.jpg" alt="Martha's Diner"
+                        <img src="./images/world_house.webp" alt="Martha's Diner" loading="lazy"
                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
                         <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-eng">
                             LOCATION 01</div>
@@ -209,7 +421,7 @@
                 <!-- Location 2 -->
                 <div class="glass-card p-6 rounded-2xl fade-in-up" style="animation-delay: 0.2s;">
                     <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
-                        <img src="./images/world_lookdev.jpg" alt="Gravity Fall"
+                        <img src="./images/world_floating.webp" alt="Gravity Fall" loading="lazy"
                             class="w-full h-full object-cover transition duration-500 hover:scale-110">
                         <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-eng">
                             PHENOMENON</div>
@@ -230,11 +442,42 @@
                                 d="M13 10V3L4 14h7v7l9-11h-7z"></path>
                         </svg>
                     </div>
-                    <h3 class="text-xl font-bold text-gray-800 mb-3">反重力（Anit-Gravity）</h3>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">反重力（Anti-Gravity）</h3>
                     <p class="text-sm text-gray-600 leading-relaxed">
                         物理的な浮力だけでなく、「心の重荷を解き放つ力」のメタファー。
                         物語の終盤、ルカの覚醒と共に発現する「大切な人を守るための力」。
                         世界を元の姿に戻す鍵と言われている。
+                    </p>
+                </div>
+                <!-- Location 3: Anchor Tower -->
+                <div class="glass-card p-6 rounded-2xl fade-in-up border-l-4 border-l-red-400 bg-red-50/30"
+                    style="animation-delay: 0.4s;">
+                    <div class="h-48 mb-6 flex items-center justify-center bg-gray-900 rounded-xl text-red-400">
+                        <svg class="w-20 h-20" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1"
+                                d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path>
+                        </svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">アンカー塔（Anchor Tower）</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        重力制御機構「アンカー」を管理する巨大な塔。
+                        グレイヴが管理者として統率し、不安定な重力を「力ずく」で制御する。
+                        塔の最上部から放たれるビームは、浮遊島の鎖をも切断する威力を持つ。
+                    </p>
+                </div>
+                <!-- Location 4: Floating Archipelago -->
+                <div class="glass-card p-6 rounded-2xl fade-in-up" style="animation-delay: 0.5s;">
+                    <div class="h-48 mb-6 overflow-hidden rounded-xl relative">
+                        <img src="./images/world_floating.webp" alt="Floating Archipelago" loading="lazy"
+                            class="w-full h-full object-cover transition duration-500 hover:scale-110">
+                        <div class="absolute bottom-2 left-2 bg-black/60 text-white text-xs px-2 py-1 rounded font-eng">
+                            LOCATION 03</div>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">浮遊群島（Floating Archipelago）</h3>
+                    <p class="text-sm text-gray-600 leading-relaxed">
+                        重力崩壊で空へ浮かび上がった島々。太古の鎖と巨木の根によって辛うじて繋がれている。
+                        かつてエルフと人間が共存していた時代の痕跡が残る。
+                        最奥の最も高い島にリリアの聖域がある。
                     </p>
                 </div>
             </div>
@@ -253,11 +496,11 @@
             <div class="flex flex-col lg:flex-row gap-12 items-start fade-in-up">
                 <!-- Visuals -->
                 <div class="lg:w-1/2 w-full space-y-4">
-                    <img src="./images/luca_concept.jpg" alt="Luca Main" class="w-full rounded-2xl shadow-xl">
+                    <img src="./images/luca_concept.webp" alt="Luca Main" loading="lazy" class="w-full rounded-2xl shadow-xl">
                     <p class="text-xs text-center text-gray-500 font-eng">Concept Art: Scavenger Gear</p>
                     <div class="grid grid-cols-2 gap-4">
-                        <img src="./images/luca_expressions.jpg" alt="Exp 1" class="rounded-lg shadow-sm">
-                        <img src="./images/luca_silua_adjust.jpg" alt="Exp 2"
+                        <img src="./images/luca_expressions.webp" alt="Exp 1" loading="lazy" class="rounded-lg shadow-sm">
+                        <img src="./images/luca_silua_adjust.webp" alt="Exp 2" loading="lazy"
                             class="rounded-lg shadow-sm object-cover object-top h-32 w-full">
                     </div>
                 </div>
@@ -302,9 +545,17 @@
         </div>
     </section>
 
+    <!-- Ad Space: Interstitial — AdSense承認後にコメント解除 -->
+    <!-- <div class="py-12 bg-gray-50 flex justify-center">
+        <div class="text-center w-full max-w-4xl mx-4">
+            <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+            <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+        </div>
+    </div> -->
+
     <!-- Character 2: Silua -->
     <section class="py-24 px-4 bg-white relative border-b border-gray-100">
-        <div class="absolute inset-0 z-0 opacity-5 bg-[url('./images/world_forest.jpg')] bg-cover bg-center"></div>
+        <div class="absolute inset-0 z-0 opacity-5 bg-[url('./images/world_highway.webp')] bg-cover bg-center"></div>
         <div class="max-w-6xl mx-auto relative z-10">
             <div class="text-center mb-16 fade-in-up">
                 <span class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Main
@@ -315,12 +566,14 @@
             <div class="flex flex-col lg:flex-row-reverse gap-12 items-start fade-in-up">
                 <!-- Visuals -->
                 <div class="lg:w-1/2 w-full space-y-4">
-                    <div class="h-96 overflow-hidden rounded-2xl shadow-xl relative">
-                        <!-- Crop to show Silua mostly from the multi or adjust image -->
-                        <img src="./images/multi_expressions.jpg" alt="Silua Main"
-                            class="w-full h-full object-cover object-top">
+                    <img src="./images/silua_sheet_v2.webp" alt="Silua Main" loading="lazy" class="w-full rounded-2xl shadow-xl">
+                    <p class="text-xs text-center text-gray-500 font-eng">Concept Art: Elf of the Dawn</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="rounded-lg overflow-hidden shadow-sm relative">
+                            <img src="./images/silua_expressions.webp" alt="Silua Expressions" loading="lazy"
+                                class="w-full h-auto object-cover">
+                        </div>
                     </div>
-                    <p class="text-xs text-center text-gray-500 font-eng">Interaction & Expressions</p>
                 </div>
 
                 <!-- Info -->
@@ -364,6 +617,401 @@
         </div>
     </section>
 
+    <!-- Character 3: Grave -->
+    <section id="characters" class="py-24 px-4 bg-gray-900 relative border-b border-gray-800">
+        <div class="absolute inset-0 z-0 opacity-10 bg-gradient-to-br from-red-900 to-gray-900"></div>
+        <div class="max-w-6xl mx-auto relative z-10">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="font-eng text-red-400 tracking-widest text-sm font-bold uppercase mb-2 block">Antagonist</span>
+                <h2 class="text-4xl font-bold text-gray-100">グレイヴ（Grave）</h2>
+            </div>
+
+            <div class="flex flex-col lg:flex-row gap-12 items-start fade-in-up">
+                <!-- Visuals -->
+                <div class="lg:w-1/2 w-full space-y-4">
+                    <img src="./images/grave_sheet.webp" alt="Grave Main" loading="lazy" class="w-full rounded-2xl shadow-xl border border-gray-700">
+                    <p class="text-xs text-center text-gray-500 font-eng">Character Design: Anchor Administrator</p>
+                    <div class="grid grid-cols-1 gap-4">
+                        <div class="rounded-lg overflow-hidden shadow-sm relative">
+                            <img src="./images/grave_expressions.webp" alt="Grave Expressions" loading="lazy"
+                                class="w-full h-auto object-cover rounded-lg border border-gray-700">
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Info -->
+                <div class="lg:w-1/2 w-full">
+                    <h3 class="text-2xl font-bold text-gray-100 mb-2 font-eng">The Anchor Administrator</h3>
+                    <p class="text-red-400 font-bold mb-8">「不安定なものは、すべて排除する」</p>
+
+                    <p class="text-gray-300 leading-loose mb-8 text-justify">
+                        重力制御機構「アンカー」を管理する組織の指揮官。
+                        左目に赤く光る機械義眼を持ち、冷徹な判断力で浮遊群島の秩序を維持する。
+                        かつてはルカの父と共に重力崩壊の原因解明に取り組む研究者だったが、
+                        研究施設での事故で左目を失い、親友を亡くして以来、
+                        「不安定な重力は力で押さえつけるべき」という信念に変わった。
+                        シルアの歌（重力魔法）を最大の脅威と見なし、排除を図る。
+                    </p>
+
+                    <div class="bg-gray-800 rounded-xl p-6 shadow-sm border border-gray-700">
+                        <h4 class="font-bold text-gray-200 mb-4 border-b border-gray-700 pb-2">Profile Data</h4>
+                        <div class="profile-stat-row border-gray-700">
+                            <div class="profile-stat-label text-gray-400">Age</div>
+                            <div class="profile-stat-value text-gray-200">Late 20s</div>
+                        </div>
+                        <div class="profile-stat-row border-gray-700">
+                            <div class="profile-stat-label text-gray-400">Role</div>
+                            <div class="profile-stat-value text-gray-200">Anchor Administrator</div>
+                        </div>
+                        <div class="profile-stat-row border-gray-700">
+                            <div class="profile-stat-label text-gray-400">Equipment</div>
+                            <div class="profile-stat-value text-gray-200">Mechanical Prosthetic Eye (Left)</div>
+                        </div>
+                        <div class="profile-stat-row border-gray-700">
+                            <div class="profile-stat-label text-gray-400">Past</div>
+                            <div class="profile-stat-value text-gray-200">Former Research Partner of Luca's Father</div>
+                        </div>
+                        <div class="profile-stat-row border-none">
+                            <div class="profile-stat-label text-gray-400">Belief</div>
+                            <div class="profile-stat-value text-red-400">Unstable gravity must be eliminated</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Story Structure Section -->
+    <section id="story-structure" class="py-24 px-4 bg-gradient-to-br from-[#f0f4f8] to-[#e2e8f0]">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16 fade-in-up">
+                <span class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Story Structure</span>
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">全3幕11章</h2>
+                <div class="w-20 h-1 bg-blue-400 mx-auto mt-6"></div>
+            </div>
+
+            <!-- 3幕タイムラインバー -->
+            <div class="fade-in-up mb-16">
+                <div class="flex rounded-full overflow-hidden h-3 shadow-inner">
+                    <div class="bg-gradient-to-r from-blue-300 to-blue-400 flex-[4]" title="第1幕: 1-4章"></div>
+                    <div class="bg-gradient-to-r from-orange-300 to-red-400 flex-[4]" title="第2幕: 5-8章"></div>
+                    <div class="bg-gradient-to-r from-green-300 to-emerald-400 flex-[3]" title="第3幕: 9-11章"></div>
+                </div>
+                <div class="flex mt-2 text-xs font-eng text-gray-500">
+                    <div class="flex-[4] text-center">ACT 1 - Encounter (Ch.1-4)</div>
+                    <div class="flex-[4] text-center">ACT 2 - Journey (Ch.5-8)</div>
+                    <div class="flex-[3] text-center">ACT 3 - Rebirth (Ch.9-11)</div>
+                </div>
+            </div>
+
+            <!-- 章カードグリッド -->
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- 第1章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-blue-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-blue-100 text-blue-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 1</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 01</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">鋼の揺りかご</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Cradle of Steel</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv01_gray_daily.webp" alt="Ch1 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">廃墟街のスカベンジャー・ルカが巨鋼の森で記憶を失ったエルフの少女シルアと出会う。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-gray-200 text-gray-600 px-2 py-0.5 rounded-full">孤独</span>
+                        <span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">緊張</span>
+                    </div>
+                </div>
+
+                <!-- 第2章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-blue-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-blue-100 text-blue-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 1</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 02</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">名前のない歌</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">A Song Without a Name</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv02_moonlit_float.webp" alt="Ch2 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">マーサの食堂に迎えられたシルア。夜、屋根の上で口ずさむ歌と共に小石や水滴が浮かび上がる。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full">温かさ</span>
+                        <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">希望</span>
+                    </div>
+                </div>
+
+                <!-- 第3章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-blue-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-blue-100 text-blue-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 1</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 03</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">錆色の絆</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Bonds of Rust</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv03_scavenging.webp" alt="Ch3 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">シルアがルカの廃品回収に同行。少しずつ心を開くルカ。だがアンカーの巡察隊が不穏な影を落とす。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full">温かさ</span>
+                        <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">希望</span>
+                        <span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">不穏</span>
+                    </div>
+                </div>
+
+                <!-- 第4章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-blue-300">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-blue-100 text-blue-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 1</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 04</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">嵐の前触れ</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Before the Storm</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv04_ominous_shadow.webp" alt="Ch4 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">マーサの過去が語られ、シルアの記憶が断片的に蘇る。巡察隊の指揮官グレイヴが姿を現す。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-red-100 text-red-600 px-2 py-0.5 rounded-full">緊張</span>
+                        <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">衝撃</span>
+                    </div>
+                </div>
+
+                <!-- 第5章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-orange-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-orange-100 text-orange-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 2</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 05</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">廃園の逃走</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Flight Through the Ruins</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv07_subway_chase.webp" alt="Ch5 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">グレイヴの追撃から逃走。マーサが身を挺して時間を稼ぎ、二人は浮遊群島への道へ。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-red-200 text-red-700 px-2 py-0.5 rounded-full">恐怖</span>
+                        <span class="text-xs bg-yellow-100 text-yellow-700 px-2 py-0.5 rounded-full">決意</span>
+                    </div>
+                </div>
+
+                <!-- 第6章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-orange-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-orange-100 text-orange-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 2</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 06</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">空の道標</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Waymarks in the Sky</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv08_sky_archipelago.webp" alt="Ch6 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">浮遊群島に足を踏み入れ、壮大な光景を目にする二人。シルアの歌の力の代償も明らかに。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">希望</span>
+                        <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">発見</span>
+                    </div>
+                </div>
+
+                <!-- 第7章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-orange-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-orange-100 text-orange-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 2</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 07</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">父の影</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Shadow of the Father</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv10_ruined_lab.webp" alt="Ch7 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">朽ちた研究施設で父の研究ノートを発見。グレイヴとの因縁、リリアとの繋がりが明かされる。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-purple-100 text-purple-600 px-2 py-0.5 rounded-full">衝撃</span>
+                        <span class="text-xs bg-blue-100 text-blue-600 px-2 py-0.5 rounded-full">悲しみ</span>
+                    </div>
+                </div>
+
+                <!-- 第8章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-orange-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-orange-100 text-orange-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 2</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 08</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">聖域の門</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Gate of the Sanctuary</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv12_gate_song.webp" alt="Ch8 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">聖域の門前でシルアが全力で歌う。グレイヴが鎖を切断し島を落とそうとする最大の危機。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-gray-300 text-gray-700 px-2 py-0.5 rounded-full">絶望</span>
+                        <span class="text-xs bg-red-200 text-red-700 px-2 py-0.5 rounded-full">覚悟</span>
+                    </div>
+                </div>
+
+                <!-- 第9章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-emerald-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-emerald-100 text-emerald-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 3</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 09</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">暁の声</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Voice of the Dawn</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv14_mother_reunion.webp" alt="Ch9 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">リリアの聖域でシルアが母と再会。リリアは完全な歌の記憶を託し、光となって消えていく。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-blue-200 text-blue-700 px-2 py-0.5 rounded-full">喪失</span>
+                        <span class="text-xs bg-green-100 text-green-600 px-2 py-0.5 rounded-full">再生</span>
+                    </div>
+                </div>
+
+                <!-- 第10章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-emerald-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-emerald-100 text-emerald-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 3</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 10</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">反重力</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">Anti-Gravity</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv16_fusion.webp" alt="Ch10 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">シルアの完全な歌とルカの覚醒した力が融合。アンカーが「調和」モードに切り替わるクライマックス。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-red-200 text-red-700 px-2 py-0.5 rounded-full">緊迫</span>
+                        <span class="text-xs bg-green-200 text-green-700 px-2 py-0.5 rounded-full">解放</span>
+                    </div>
+                </div>
+
+                <!-- 第11章 -->
+                <div class="glass-card p-5 rounded-2xl fade-in-up border-l-4 border-l-emerald-400">
+                    <div class="flex items-center gap-2 mb-3">
+                        <span class="bg-emerald-100 text-emerald-600 text-xs font-eng font-bold px-2 py-0.5 rounded">ACT 3</span>
+                        <span class="text-gray-400 text-xs font-eng">Chapter 11</span>
+                    </div>
+                    <h4 class="font-bold text-gray-800 mb-1">空に還る日</h4>
+                    <p class="text-xs text-gray-500 font-eng mb-3">The Day We Return to the Sky</p>
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
+                        <img src="./images/kv17_extended_hand.webp" alt="Ch11 KV" loading="lazy"
+                            class="w-full h-full object-cover">
+                    </div>
+                    <p class="text-sm text-gray-600 leading-relaxed mb-3">ルカがグレイヴに手を差し伸べる。フードを脱ぎ空を見上げる、穏やかで希望に満ちた結末。</p>
+                    <div class="flex flex-wrap gap-1">
+                        <span class="text-xs bg-orange-100 text-orange-600 px-2 py-0.5 rounded-full">感動</span>
+                        <span class="text-xs bg-green-200 text-green-700 px-2 py-0.5 rounded-full">幸福</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 感情トーンチャート -->
+            <div class="mt-16 fade-in-up">
+                <h3 class="text-xl font-bold text-gray-700 mb-8 text-center">感情トーンチャート</h3>
+                <div class="overflow-x-auto">
+                    <div class="min-w-[700px] space-y-4">
+                        <!-- 温かさ -->
+                        <div class="flex items-center gap-3">
+                            <span class="w-16 text-xs text-right text-gray-500 shrink-0">温かさ</span>
+                            <div class="flex gap-1 flex-1">
+                                <div class="h-6 rounded bg-orange-100 flex-[0]" title="Ch1: --"></div>
+                                <div class="h-6 rounded bg-orange-400 flex-[4]" title="Ch2: ++++"></div>
+                                <div class="h-6 rounded bg-orange-300 flex-[3]" title="Ch3: +++"></div>
+                                <div class="h-6 rounded bg-orange-100 flex-[1]" title="Ch4: +"></div>
+                                <div class="h-6 rounded bg-orange-100 flex-[0]" title="Ch5: --"></div>
+                                <div class="h-6 rounded bg-orange-200 flex-[2]" title="Ch6: ++"></div>
+                                <div class="h-6 rounded bg-orange-100 flex-[0]" title="Ch7: --"></div>
+                                <div class="h-6 rounded bg-orange-100 flex-[0]" title="Ch8: --"></div>
+                                <div class="h-6 rounded bg-orange-200 flex-[2]" title="Ch9: ++"></div>
+                                <div class="h-6 rounded bg-orange-100 flex-[1]" title="Ch10: +"></div>
+                                <div class="h-6 rounded bg-orange-500 flex-[5]" title="Ch11: +++++"></div>
+                            </div>
+                        </div>
+                        <!-- 緊張 -->
+                        <div class="flex items-center gap-3">
+                            <span class="w-16 text-xs text-right text-gray-500 shrink-0">緊張</span>
+                            <div class="flex gap-1 flex-1">
+                                <div class="h-6 rounded bg-red-200 flex-[2]" title="Ch1: ++"></div>
+                                <div class="h-6 rounded bg-red-100 flex-[0]" title="Ch2: --"></div>
+                                <div class="h-6 rounded bg-red-100 flex-[1]" title="Ch3: +"></div>
+                                <div class="h-6 rounded bg-red-400 flex-[4]" title="Ch4: ++++"></div>
+                                <div class="h-6 rounded bg-red-500 flex-[5]" title="Ch5: +++++"></div>
+                                <div class="h-6 rounded bg-red-100 flex-[1]" title="Ch6: +"></div>
+                                <div class="h-6 rounded bg-red-300 flex-[3]" title="Ch7: +++"></div>
+                                <div class="h-6 rounded bg-red-500 flex-[5]" title="Ch8: +++++"></div>
+                                <div class="h-6 rounded bg-red-100 flex-[1]" title="Ch9: +"></div>
+                                <div class="h-6 rounded bg-red-500 flex-[5]" title="Ch10: +++++"></div>
+                                <div class="h-6 rounded bg-red-100 flex-[0]" title="Ch11: --"></div>
+                            </div>
+                        </div>
+                        <!-- 悲しみ -->
+                        <div class="flex items-center gap-3">
+                            <span class="w-16 text-xs text-right text-gray-500 shrink-0">悲しみ</span>
+                            <div class="flex gap-1 flex-1">
+                                <div class="h-6 rounded bg-blue-100 flex-[1]" title="Ch1: +"></div>
+                                <div class="h-6 rounded bg-blue-100 flex-[0]" title="Ch2: --"></div>
+                                <div class="h-6 rounded bg-blue-100 flex-[0]" title="Ch3: --"></div>
+                                <div class="h-6 rounded bg-blue-200 flex-[2]" title="Ch4: ++"></div>
+                                <div class="h-6 rounded bg-blue-300 flex-[3]" title="Ch5: +++"></div>
+                                <div class="h-6 rounded bg-blue-100 flex-[0]" title="Ch6: --"></div>
+                                <div class="h-6 rounded bg-blue-400 flex-[4]" title="Ch7: ++++"></div>
+                                <div class="h-6 rounded bg-blue-300 flex-[3]" title="Ch8: +++"></div>
+                                <div class="h-6 rounded bg-blue-500 flex-[5]" title="Ch9: +++++"></div>
+                                <div class="h-6 rounded bg-blue-100 flex-[1]" title="Ch10: +"></div>
+                                <div class="h-6 rounded bg-blue-100 flex-[1]" title="Ch11: +"></div>
+                            </div>
+                        </div>
+                        <!-- 希望 -->
+                        <div class="flex items-center gap-3">
+                            <span class="w-16 text-xs text-right text-gray-500 shrink-0">希望</span>
+                            <div class="flex gap-1 flex-1">
+                                <div class="h-6 rounded bg-emerald-100 flex-[0]" title="Ch1: --"></div>
+                                <div class="h-6 rounded bg-emerald-200 flex-[2]" title="Ch2: ++"></div>
+                                <div class="h-6 rounded bg-emerald-300 flex-[3]" title="Ch3: +++"></div>
+                                <div class="h-6 rounded bg-emerald-100 flex-[1]" title="Ch4: +"></div>
+                                <div class="h-6 rounded bg-emerald-100 flex-[1]" title="Ch5: +"></div>
+                                <div class="h-6 rounded bg-emerald-400 flex-[4]" title="Ch6: ++++"></div>
+                                <div class="h-6 rounded bg-emerald-100 flex-[1]" title="Ch7: +"></div>
+                                <div class="h-6 rounded bg-emerald-200 flex-[2]" title="Ch8: ++"></div>
+                                <div class="h-6 rounded bg-emerald-300 flex-[3]" title="Ch9: +++"></div>
+                                <div class="h-6 rounded bg-emerald-400 flex-[4]" title="Ch10: ++++"></div>
+                                <div class="h-6 rounded bg-emerald-500 flex-[5]" title="Ch11: +++++"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex justify-between mt-2 text-[10px] text-gray-400 font-eng min-w-[700px]">
+                    <span class="w-16"></span>
+                    <div class="flex gap-1 flex-1">
+                        <span class="flex-1 text-center">1</span>
+                        <span class="flex-1 text-center">2</span>
+                        <span class="flex-1 text-center">3</span>
+                        <span class="flex-1 text-center">4</span>
+                        <span class="flex-1 text-center">5</span>
+                        <span class="flex-1 text-center">6</span>
+                        <span class="flex-1 text-center">7</span>
+                        <span class="flex-1 text-center">8</span>
+                        <span class="flex-1 text-center">9</span>
+                        <span class="flex-1 text-center">10</span>
+                        <span class="flex-1 text-center">11</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sub Characters -->
     <section class="py-20 px-4 bg-gray-50">
         <div class="max-w-5xl mx-auto">
@@ -371,10 +1019,20 @@
                 <h3 class="text-2xl font-bold text-gray-600">Supporting Characters</h3>
             </div>
             <div class="grid md:grid-cols-2 gap-8">
+                <!-- Martha -->
                 <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 fade-in-up">
+                    <div class="space-y-3 mb-6">
+                        <div class="h-48 overflow-hidden rounded-xl relative">
+                            <img src="./images/martha_sheet.webp" alt="Martha Design" loading="lazy"
+                                class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="h-24 overflow-hidden rounded-xl relative border border-gray-100">
+                            <img src="./images/martha_expressions.webp" alt="Martha Expressions" loading="lazy"
+                                class="w-full h-full object-cover object-center hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
                     <div class="flex items-center gap-4 mb-4">
-                        <div
-                            class="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-3xl">
+                        <div class="w-16 h-16 bg-orange-100 text-orange-500 rounded-full flex items-center justify-center text-3xl">
                             👵</div>
                         <div>
                             <h4 class="text-xl font-bold text-gray-800 border-b border-orange-200 pb-1 inline-block">
@@ -390,12 +1048,19 @@
                     </p>
                 </div>
 
-                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 fade-in-up"
-                    style="animation-delay: 0.1s;">
+                <!-- Lilia -->
+                <div class="bg-white p-8 rounded-2xl shadow-sm border border-gray-200 fade-in-up" style="animation-delay: 0.1s;">
+                    <div class="space-y-3 mb-6">
+                        <div class="h-48 overflow-hidden rounded-xl relative">
+                            <img src="./images/lilia_sheet.webp" alt="Lilia Design" loading="lazy"
+                                class="w-full h-full object-cover object-top hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="h-24 overflow-hidden rounded-xl relative border border-gray-100">
+                            <img src="./images/lilia_expressions.webp" alt="Lilia Expressions" loading="lazy"
+                                class="w-full h-full object-cover object-center hover:scale-105 transition duration-500">
+                        </div>
+                    </div>
                     <div class="flex items-center gap-4 mb-4">
-                        <div
-                            class="w-16 h-16 bg-blue-100 text-blue-500 rounded-full flex items-center justify-center text-3xl">
-                            🧝‍♀️</div>
                         <div>
                             <h4 class="text-xl font-bold text-gray-800 border-b border-blue-200 pb-1 inline-block">
                                 リリア（Lilia）</h4>
@@ -410,10 +1075,72 @@
                     </p>
                 </div>
             </div>
+    </section>
+
+    <!-- Newsletter + Support -->
+    <section class="py-20 px-4 bg-gradient-to-br from-indigo-50 to-purple-50 border-t border-indigo-100">
+        <div class="max-w-4xl mx-auto">
+
+            <!-- メール登録（最重要CTA） -->
+            <div class="text-center mb-16 fade-in-up">
+                <span class="font-eng text-indigo-400 tracking-widest text-sm font-bold uppercase mb-2 block">Newsletter</span>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">最新情報をお届けします</h3>
+                <p class="text-gray-600 mb-6 leading-relaxed text-sm">
+                    クラウドファンディング開始・新章公開・イベント情報を<br>いち早くメールでお届けします。
+                </p>
+                <!-- TODO: Mailchimp/Sendinblue等のフォームURLに置き換え -->
+                <form id="newsletter-form" class="flex flex-col sm:flex-row gap-3 max-w-md mx-auto" onsubmit="event.preventDefault(); document.getElementById('newsletter-thanks').classList.remove('hidden'); this.classList.add('hidden');">
+                    <input type="email" required placeholder="メールアドレス"
+                        class="flex-1 px-4 py-3 rounded-full border border-gray-300 text-sm focus:outline-none focus:ring-2 focus:ring-indigo-300 focus:border-transparent">
+                    <button type="submit"
+                        class="px-6 py-3 bg-indigo-500 text-white rounded-full text-sm font-bold hover:bg-indigo-600 transition shadow-md">
+                        登録する
+                    </button>
+                </form>
+                <div id="newsletter-thanks" class="hidden mt-4 text-indigo-600 font-bold text-sm">
+                    登録ありがとうございます（※ 現在フォーム準備中 - Mailchimp連携後に有効化されます）
+                </div>
+                <p class="text-xs text-gray-400 mt-3">スパムは送りません。配信停止はいつでも可能です。</p>
+            </div>
+
+            <!-- 制作支援 -->
+            <div class="fade-in-up">
+                <h3 class="text-2xl font-bold mb-4 text-gray-800 text-center">制作支援のお願い</h3>
+                <p class="text-gray-600 mb-8 leading-relaxed text-center">
+                    『黄昏のルカと暁のエルフ』は、皆様からのご支援によって制作されています。<br>
+                    物語の続きを紡ぐため、クラウドファンディングやファンクラブへのご参加をお待ちしております。
+                </p>
+
+                <div class="grid md:grid-cols-2 gap-4 max-w-2xl mx-auto font-eng font-bold">
+                    <!-- TODO: クラウドファンディングページ開設後にhrefを実URLに差し替え -->
+                    <div class="relative overflow-hidden rounded-xl bg-green-500/60 text-white p-6 shadow-lg cursor-default">
+                        <div class="absolute top-2 right-2 bg-white/90 text-green-700 text-[10px] font-sans font-bold px-2 py-0.5 rounded-full">準備中</div>
+                        <span class="block text-2xl mb-1">Kickstarter</span>
+                        <span class="text-xs opacity-90 font-sans font-normal tracking-wider">GLOBAL SUPPORT</span>
+                    </div>
+                    <div class="relative overflow-hidden rounded-xl bg-orange-500/60 text-white p-6 shadow-lg cursor-default">
+                        <div class="absolute top-2 right-2 bg-white/90 text-orange-700 text-[10px] font-sans font-bold px-2 py-0.5 rounded-full">準備中</div>
+                        <span class="block text-2xl mb-1">CAMPFIRE</span>
+                        <span class="text-xs opacity-90 font-sans font-normal tracking-wider">JAPAN SUPPORT</span>
+                    </div>
+                </div>
+
+                <div class="mt-6 flex justify-center gap-4 text-sm font-eng flex-wrap">
+                    <!-- TODO: 各サービス開設後にhrefを実URLに差し替え -->
+                    <span class="flex items-center gap-2 px-6 py-3 bg-white/50 border border-gray-200 rounded-full text-gray-400 cursor-default">
+                        <span class="w-2 h-2 bg-pink-300 rounded-full"></span>
+                        Pixiv FANBOX (準備中)
+                    </span>
+                    <span class="flex items-center gap-2 px-6 py-3 bg-white/50 border border-gray-200 rounded-full text-gray-400 cursor-default">
+                        <span class="w-2 h-2 bg-red-300 rounded-full"></span>
+                        Patreon (準備中)
+                    </span>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Concept Section (Shortened) -->
+    <!-- Concept + SNS + Contact -->
     <section class="py-20 px-4 bg-white border-t border-gray-100">
         <div class="max-w-4xl mx-auto text-center">
             <h3 class="text-xl font-bold mb-6 font-eng text-gray-800 tracking-[0.2em]">PROJECT VISION</h3>
@@ -422,10 +1149,78 @@
                 物理的な現象と心理描写をリンクさせた、新しいファンタジー体験。<br>
                 水彩画のタッチで描かれる、美しくも切ない世界の物語。
             </p>
-            <a href="#"
+
+            <!-- SNSリンク -->
+            <div class="flex justify-center gap-6 mb-8">
+                <!-- TODO: 各SNSアカウントのURLに置き換え -->
+                <a href="https://x.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition" aria-label="X (Twitter)">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+                </a>
+                <a href="https://www.instagram.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition" aria-label="Instagram">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+                </a>
+                <a href="https://github.com/" target="_blank" rel="noopener" class="text-gray-400 hover:text-gray-700 transition" aria-label="GitHub">
+                    <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0112 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z"/></svg>
+                </a>
+            </div>
+
+            <!-- お問い合わせ -->
+            <!-- TODO: 実際のメールアドレスに置き換え -->
+            <a href="mailto:yopy1030@gmail.com"
                 class="inline-block px-8 py-3 rounded-full border border-gray-300 text-gray-600 hover:bg-gray-100 transition font-eng text-sm">
                 CONTACT FOR INQUIRIES
             </a>
+        </div>
+    </section>
+
+    <!-- AdSense: フッター広告枠 -->
+    <!-- TODO: AdSense承認後に以下のコメントを実際のAdSenseコードに置き換え -->
+    <!-- <div class="py-8 bg-white flex justify-center border-t border-gray-100">
+        <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-XXXXXXXX" data-ad-slot="XXXXXXXX" data-ad-format="auto" data-full-width-responsive="true"></ins>
+        <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+    </div> -->
+
+    <!-- Comments Section (giscus - GitHub Discussions) -->
+    <section class="py-16 px-4 bg-gray-50 border-t border-gray-200" id="comments">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-10">
+                <span
+                    class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Community</span>
+                <h2 class="text-2xl font-bold text-gray-800">Comments</h2>
+                <p class="text-sm text-gray-500 mt-2">GitHubアカウントでコメントできます</p>
+            </div>
+
+            <!-- giscus コメントウィジェット -->
+            <!-- ⚠️ 設定手順: https://giscus.app/ でrepo/category IDを取得してdata属性を更新してください -->
+            <script src="https://giscus.app/client.js"
+                data-repo="GITHUB_OWNER/REPO_NAME"
+                data-repo-id="REPO_ID"
+                data-category="General"
+                data-category-id="CATEGORY_ID"
+                data-mapping="pathname"
+                data-strict="0"
+                data-reactions-enabled="1"
+                data-emit-metadata="0"
+                data-input-position="top"
+                data-theme="light"
+                data-lang="ja"
+                data-loading="lazy"
+                crossorigin="anonymous"
+                async>
+            </script>
+
+            <!-- giscus未設定時のフォールバック表示 -->
+            <div id="giscus-setup-notice" class="mt-8 text-center">
+                <div class="bg-blue-50 border border-blue-200 rounded-xl p-6 text-left max-w-2xl mx-auto">
+                    <h4 class="font-bold text-blue-800 mb-3">コメント機能の有効化手順</h4>
+                    <ol class="text-sm text-blue-700 space-y-2 list-decimal list-inside">
+                        <li>GitHubでパブリックリポジトリを作成する</li>
+                        <li>リポジトリの Settings → Features → <strong>Discussions</strong> をONにする</li>
+                        <li><a href="https://github.com/apps/giscus" target="_blank" class="underline font-bold">github.com/apps/giscus</a> からリポジトリにインストールする</li>
+                        <li><a href="https://giscus.app/" target="_blank" class="underline font-bold">giscus.app</a> でリポジトリを入力 → 生成されたdata属性をindex.htmlのscriptタグに貼り付ける</li>
+                    </ol>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -455,6 +1250,55 @@
         }, observerOptions);
 
         document.querySelectorAll('.fade-in-up').forEach(el => observer.observe(el));
+
+        // 固定ナビゲーション: Heroセクション通過後に表示
+        const nav = document.getElementById('main-nav');
+        const hero = document.querySelector('header');
+        const navObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) {
+                    nav.classList.add('visible');
+                } else {
+                    nav.classList.remove('visible');
+                }
+            });
+        }, { threshold: 0 });
+        navObserver.observe(hero);
+
+        // ハンバーガーメニュー
+        const hamburgerBtn = document.getElementById('hamburger-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('hamburger-open');
+            mobileMenu.classList.toggle('hidden');
+        });
+        // モバイルメニューリンククリックで閉じる
+        mobileMenu.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('hamburger-open');
+                mobileMenu.classList.add('hidden');
+            });
+        });
+
+        // giscus設定済みの場合はセットアップ案内を非表示にする
+        const giscusScript = document.querySelector('script[src*="giscus.app"]');
+        if (giscusScript && !giscusScript.getAttribute('data-repo').includes('GITHUB_OWNER')) {
+            const notice = document.getElementById('giscus-setup-notice');
+            if (notice) notice.style.display = 'none';
+        }
+
+        // スムーススクロール
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    const offset = 60; // ナビバーの高さ分
+                    const top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                    window.scrollTo({ top, behavior: 'smooth' });
+                }
+            });
+        });
     </script>
 </body>
 
