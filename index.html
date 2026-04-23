@@ -12,16 +12,20 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://anti-gravity-saga2.vercel.app/">
-    <meta property="og:title" content="黄昏のルカと暁のエルフ -Anti-Gravity Saga-">
-    <meta property="og:description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。">
-    <meta property="og:image" content="https://anti-gravity-saga2.vercel.app/images/kv01_gray_daily.webp">
+    <meta property="og:title" content="黄昏のルカと暁のエルフ -Anti-Gravity Saga- | 5分パイロット版 2026年10月公開予定">
+    <meta property="og:description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの5分パイロット版アニメーションを2026年10月に公開予定。プリプロダクション進行中。">
+    <meta property="og:image" content="https://anti-gravity-saga2.vercel.app/images/hero.webp">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:locale" content="ja_JP">
+    <meta property="og:site_name" content="Anti-Gravity Saga">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://anti-gravity-saga2.vercel.app/">
-    <meta property="twitter:title" content="黄昏のルカと暁のエルフ -Anti-Gravity Saga-">
-    <meta property="twitter:description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。">
-    <meta property="twitter:image" content="https://anti-gravity-saga2.vercel.app/images/kv01_gray_daily.webp">
+    <meta property="twitter:title" content="黄昏のルカと暁のエルフ -Anti-Gravity Saga- | 5分パイロット版 2026年10月公開予定">
+    <meta property="twitter:description" content="重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの5分パイロット版アニメーションを2026年10月に公開予定。">
+    <meta property="twitter:image" content="https://anti-gravity-saga2.vercel.app/images/hero.webp">
 
     <!-- Google Site Verification -->
     <meta name="google-site-verification" content="wGWFuRq1PqAk6WHpxFlV8akOjI5iq_fXHpqCU4NQ8pU" />
@@ -43,14 +47,23 @@
         "name": "黄昏のルカと暁のエルフ -Anti-Gravity Saga-",
         "description": "重力が不安定な世界「グラビティ・フォール」を舞台にした、少年とエルフの物語。",
         "url": "https://anti-gravity-saga2.vercel.app/",
-        "image": "https://anti-gravity-saga2.vercel.app/images/kv01_gray_daily.webp",
+        "image": "https://anti-gravity-saga2.vercel.app/images/hero.webp",
         "genre": ["Fantasy", "Adventure"],
         "inLanguage": "ja",
         "datePublished": "2026-01-03",
-        "dateModified": "2026-03-29",
+        "dateModified": "2026-04-17",
         "author": {
             "@type": "Organization",
             "name": "Anti-Gravity Saga Project"
+        },
+        "workExample": {
+            "@type": "CreativeWork",
+            "name": "Anti-Gravity Saga 5分パイロット版（制作中）",
+            "description": "全11章構成の本編に先立ち、第1〜2章ダイジェスト＋第10章フラッシュ＋全章ティザーで構成する5分間のパイロット版アニメーション。2026年10月17日公開予定。",
+            "creativeWorkStatus": "InProduction",
+            "datePublished": "2026-10-17",
+            "genre": ["Animation", "Fantasy", "Adventure"],
+            "inLanguage": ["ja", "en"]
         }
     }
     </script>
@@ -187,10 +200,102 @@
         .hamburger-open .hamburger-line:nth-child(3) {
             transform: rotate(-45deg) translate(5px, -5px);
         }
+
+        /* W-11 アクセシビリティ: モーション低減対応 */
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.001ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.001ms !important;
+                scroll-behavior: auto !important;
+            }
+            .fade-in-up {
+                opacity: 1 !important;
+                transform: none !important;
+            }
+            .scroll-indicator,
+            .animate-pulse {
+                animation: none !important;
+            }
+            .glass-card:hover {
+                transform: none !important;
+            }
+        }
+
+        /* W-11 フォーカスリング強化 */
+        a:focus-visible,
+        button:focus-visible,
+        input:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 4px;
+        }
+
+        /* W-06 章KVキャッチコピー オーバーレイ */
+        .chapter-kv {
+            position: relative;
+        }
+        .chapter-overlay {
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(to top, rgba(15, 23, 42, 0.92) 0%, rgba(15, 23, 42, 0.55) 50%, rgba(15, 23, 42, 0.1) 100%);
+            color: white;
+            display: flex;
+            align-items: flex-end;
+            padding: 14px 16px;
+            opacity: 0;
+            transition: opacity 0.35s ease;
+            pointer-events: none;
+        }
+        .chapter-kv:hover .chapter-overlay,
+        .chapter-kv:focus-within .chapter-overlay {
+            opacity: 1;
+        }
+        .chapter-overlay p {
+            font-size: 0.875rem;
+            line-height: 1.5;
+            font-weight: 600;
+            text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
+            letter-spacing: 0.02em;
+        }
+        @media (prefers-reduced-motion: reduce) {
+            .chapter-overlay {
+                opacity: 1 !important;
+                background: linear-gradient(to top, rgba(15, 23, 42, 0.85), transparent 70%);
+            }
+        }
+        /* タッチ端末では常時ボトム帯で表示 */
+        @media (hover: none) {
+            .chapter-overlay {
+                opacity: 1;
+                background: linear-gradient(to top, rgba(15, 23, 42, 0.85) 0%, rgba(15, 23, 42, 0.3) 60%, transparent 100%);
+                align-items: flex-end;
+            }
+        }
+
+        /* スクリーンリーダ専用テキスト */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
     </style>
 </head>
 
 <body class="antialiased overflow-x-hidden w-full">
+
+    <!-- W-11 スキップリンク（キーボードユーザー向け） -->
+    <a href="#hero" class="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg focus:font-bold focus:text-sm">
+        メインコンテンツへスキップ
+    </a>
 
     <!-- 固定ナビゲーション -->
     <nav id="main-nav" class="nav-fixed fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md shadow-sm border-b border-gray-100">
@@ -198,6 +303,10 @@
             <a href="#hero" class="font-eng font-bold text-gray-800 text-sm tracking-wider">Anti-Gravity Saga</a>
             <!-- デスクトップメニュー -->
             <div class="hidden md:flex items-center gap-6 text-sm font-eng">
+                <a href="#pilot" class="nav-link text-gray-600 hover:text-gray-900 flex items-center gap-1.5">
+                    Pilot
+                    <span class="inline-block w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" aria-hidden="true"></span>
+                </a>
                 <a href="#story" class="nav-link text-gray-600 hover:text-gray-900">Story</a>
                 <a href="#world-map" class="nav-link text-gray-600 hover:text-gray-900">Map</a>
                 <a href="#world" class="nav-link text-gray-600 hover:text-gray-900">World</a>
@@ -215,6 +324,10 @@
         <!-- モバイルメニュー -->
         <div id="mobile-menu" class="md:hidden hidden bg-white/95 backdrop-blur-md border-t border-gray-100">
             <div class="flex flex-col py-4 px-6 gap-4 text-sm font-eng">
+                <a href="#pilot" class="text-gray-600 hover:text-gray-900 py-1 flex items-center gap-2">
+                    Pilot
+                    <span class="inline-block w-1.5 h-1.5 bg-red-500 rounded-full animate-pulse" aria-hidden="true"></span>
+                </a>
                 <a href="#story" class="text-gray-600 hover:text-gray-900 py-1">Story</a>
                 <a href="#world-map" class="text-gray-600 hover:text-gray-900 py-1">Map</a>
                 <a href="#world" class="text-gray-600 hover:text-gray-900 py-1">World</a>
@@ -267,6 +380,170 @@
             </svg>
         </div>
     </header>
+
+    <!-- Pilot Status Section: 5分パイロット版の制作進捗 -->
+    <section id="pilot" class="py-20 px-4 bg-gradient-to-br from-slate-900 via-indigo-950 to-slate-900 text-white relative overflow-hidden">
+        <!-- 背景演出 -->
+        <div class="absolute inset-0 opacity-20 pointer-events-none">
+            <div class="absolute top-1/4 left-1/4 w-72 h-72 bg-indigo-500 rounded-full blur-3xl"></div>
+            <div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full blur-3xl"></div>
+        </div>
+
+        <div class="max-w-5xl mx-auto relative z-10">
+            <!-- ヘッダー -->
+            <div class="text-center mb-12 fade-in-up">
+                <span class="inline-flex items-center gap-2 px-3 py-1 bg-red-500/20 border border-red-400/40 rounded-full text-xs font-eng tracking-widest text-red-300 mb-4">
+                    <span class="w-1.5 h-1.5 bg-red-400 rounded-full animate-pulse"></span>
+                    NOW IN PRODUCTION
+                </span>
+                <h2 class="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                    5分パイロット版<br class="md:hidden">
+                    <span class="font-eng text-2xl md:text-4xl text-indigo-300 block mt-2">2026.10.17 公開予定</span>
+                </h2>
+                <p class="text-sm md:text-base text-gray-300 max-w-2xl mx-auto leading-relaxed">
+                    全11章の物語を凝縮した、5分間のアニメーションを制作中。<br class="hidden md:block">
+                    AI生成補助 × モーションコミック ハイブリッド。完成までの全工程を、このページで公開していきます。
+                </p>
+            </div>
+
+            <!-- カウントダウン -->
+            <div class="grid grid-cols-4 gap-3 md:gap-6 max-w-2xl mx-auto mb-16 fade-in-up" style="animation-delay: 0.1s;">
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl py-4 md:py-6 text-center">
+                    <div id="pilot-days" class="text-3xl md:text-5xl font-bold font-eng text-white tabular-nums">--</div>
+                    <div class="text-[10px] md:text-xs font-eng tracking-widest text-gray-400 mt-1">DAYS</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl py-4 md:py-6 text-center">
+                    <div id="pilot-hours" class="text-3xl md:text-5xl font-bold font-eng text-white tabular-nums">--</div>
+                    <div class="text-[10px] md:text-xs font-eng tracking-widest text-gray-400 mt-1">HOURS</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl py-4 md:py-6 text-center">
+                    <div id="pilot-minutes" class="text-3xl md:text-5xl font-bold font-eng text-white tabular-nums">--</div>
+                    <div class="text-[10px] md:text-xs font-eng tracking-widest text-gray-400 mt-1">MINUTES</div>
+                </div>
+                <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl py-4 md:py-6 text-center">
+                    <div id="pilot-seconds" class="text-3xl md:text-5xl font-bold font-eng text-indigo-300 tabular-nums">--</div>
+                    <div class="text-[10px] md:text-xs font-eng tracking-widest text-gray-400 mt-1">SECONDS</div>
+                </div>
+            </div>
+
+            <!-- フェーズ進捗 -->
+            <div class="mb-16 fade-in-up" style="animation-delay: 0.2s;">
+                <h3 class="text-xl md:text-2xl font-bold mb-6 text-center">
+                    <span class="font-eng text-indigo-300 text-xs tracking-widest block mb-1">PRODUCTION PHASES</span>
+                    制作工程
+                </h3>
+                <div class="space-y-4 max-w-3xl mx-auto">
+                    <!-- Phase 1 -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-5">
+                        <div class="flex items-center justify-between mb-2 gap-3 flex-wrap">
+                            <div class="flex items-center gap-3">
+                                <span class="font-eng text-xs tracking-widest text-indigo-300">PHASE 1</span>
+                                <span class="font-bold text-sm md:text-base">プリプロダクション</span>
+                            </div>
+                            <span class="text-xs md:text-sm font-eng text-indigo-300">8 / 11 タスク完了</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-gradient-to-r from-indigo-400 to-purple-400 rounded-full" style="width: 73%;"></div>
+                        </div>
+                        <p class="text-xs text-gray-400 mt-2">脚本・絵コンテ・カット表・キャスティング・音楽方針 完了</p>
+                    </div>
+                    <!-- Phase 2 -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-5 opacity-80">
+                        <div class="flex items-center justify-between mb-2 gap-3 flex-wrap">
+                            <div class="flex items-center gap-3">
+                                <span class="font-eng text-xs tracking-widest text-gray-400">PHASE 2</span>
+                                <span class="font-bold text-sm md:text-base">プロダクション</span>
+                            </div>
+                            <span class="text-xs md:text-sm font-eng text-gray-400">2026.06 開始予定</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-white/20 rounded-full" style="width: 0%;"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">AI動画生成・ボイス収録・メインテーマ作曲・モーションコミック化</p>
+                    </div>
+                    <!-- Phase 3 -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-5 opacity-60">
+                        <div class="flex items-center justify-between mb-2 gap-3 flex-wrap">
+                            <div class="flex items-center gap-3">
+                                <span class="font-eng text-xs tracking-widest text-gray-400">PHASE 3</span>
+                                <span class="font-bold text-sm md:text-base">ポストプロダクション</span>
+                            </div>
+                            <span class="text-xs md:text-sm font-eng text-gray-400">2026.09 開始予定</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-white/20 rounded-full" style="width: 0%;"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">編集・MA・字幕・カラーグレーディング</p>
+                    </div>
+                    <!-- Phase 4 -->
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 md:p-5 opacity-40">
+                        <div class="flex items-center justify-between mb-2 gap-3 flex-wrap">
+                            <div class="flex items-center gap-3">
+                                <span class="font-eng text-xs tracking-widest text-gray-400">PHASE 4</span>
+                                <span class="font-bold text-sm md:text-base">公開・マーケティング</span>
+                            </div>
+                            <span class="text-xs md:text-sm font-eng text-gray-400">2026.10 公開</span>
+                        </div>
+                        <div class="w-full h-2 bg-white/10 rounded-full overflow-hidden">
+                            <div class="h-full bg-white/20 rounded-full" style="width: 0%;"></div>
+                        </div>
+                        <p class="text-xs text-gray-500 mt-2">YouTube公開・予告編・SNS縦型ショート・クラウドファンディング</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 公開済み資料 -->
+            <div class="mb-12 fade-in-up" style="animation-delay: 0.3s;">
+                <h3 class="text-xl md:text-2xl font-bold mb-6 text-center">
+                    <span class="font-eng text-indigo-300 text-xs tracking-widest block mb-1">PREPRODUCTION ASSETS</span>
+                    公開済みプリプロダクション資料
+                </h3>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-3 max-w-3xl mx-auto">
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition">
+                        <div class="text-2xl mb-2">📜</div>
+                        <div class="font-bold text-sm">5分脚本 v1</div>
+                        <div class="text-xs text-gray-400 mt-1">300秒・8シーン</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition">
+                        <div class="text-2xl mb-2">🎬</div>
+                        <div class="font-bold text-sm">絵コンテ</div>
+                        <div class="text-xs text-gray-400 mt-1">72カット定義</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition">
+                        <div class="text-2xl mb-2">🗂️</div>
+                        <div class="font-bold text-sm">カット表</div>
+                        <div class="text-xs text-gray-400 mt-1">46素材マッピング</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition">
+                        <div class="text-2xl mb-2">🎤</div>
+                        <div class="font-bold text-sm">キャスティング企画</div>
+                        <div class="text-xs text-gray-400 mt-1">5キャラ声質ブリーフ</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition">
+                        <div class="text-2xl mb-2">🎼</div>
+                        <div class="font-bold text-sm">音楽方針</div>
+                        <div class="text-xs text-gray-400 mt-1">BGM 7曲＋SE 7種</div>
+                    </div>
+                    <div class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 hover:bg-white/10 transition">
+                        <div class="text-2xl mb-2">🎵</div>
+                        <div class="font-bold text-sm">「名前のない歌」作詞</div>
+                        <div class="text-xs text-gray-400 mt-1">架空言語＋映像同期</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CTA -->
+            <div class="text-center fade-in-up" style="animation-delay: 0.4s;">
+                <p class="text-sm text-gray-300 mb-5">
+                    パイロット版の<strong class="text-white">完成・公開タイミング</strong>を、メールでいち早くお届けします。
+                </p>
+                <a href="#newsletter-section"
+                   class="inline-block px-8 py-3 bg-white text-slate-900 rounded-full text-sm font-bold hover:bg-gray-100 transition shadow-lg font-eng tracking-wider">
+                    GET NOTIFIED ON LAUNCH
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Ad Space: Below Hero — AdSense承認後にコメント解除 -->
     <!-- <div class="py-8 bg-white flex justify-center border-b border-gray-100">
@@ -724,9 +1001,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">鋼の揺りかご</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Cradle of Steel</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv01_gray_daily.webp" alt="Ch1 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv01_gray_daily.webp" alt="第1章 鋼の揺りかご キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>灰色の街に、ひとりの少女が落ちてきた。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">廃墟街のスカベンジャー・ルカが巨鋼の森で記憶を失ったエルフの少女シルアと出会う。</p>
                     <div class="flex flex-wrap gap-1">
@@ -743,9 +1021,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">名前のない歌</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">A Song Without a Name</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv02_moonlit_float.webp" alt="Ch2 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv02_moonlit_float.webp" alt="第2章 名前のない歌 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>歌うたびに、世界がそっと浮かび上がる。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">マーサの食堂に迎えられたシルア。夜、屋根の上で口ずさむ歌と共に小石や水滴が浮かび上がる。</p>
                     <div class="flex flex-wrap gap-1">
@@ -762,9 +1041,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">錆色の絆</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Bonds of Rust</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv03_scavenging.webp" alt="Ch3 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv03_scavenging.webp" alt="第3章 錆色の絆 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>拾い集めた廃品の中に、はじめての温度。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">シルアがルカの廃品回収に同行。少しずつ心を開くルカ。だがアンカーの巡察隊が不穏な影を落とす。</p>
                     <div class="flex flex-wrap gap-1">
@@ -782,9 +1062,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">嵐の前触れ</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Before the Storm</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv04_ominous_shadow.webp" alt="Ch4 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv04_ominous_shadow.webp" alt="第4章 嵐の前触れ キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>忘れたはずの記憶が、ふたりを追ってくる。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">マーサの過去が語られ、シルアの記憶が断片的に蘇る。巡察隊の指揮官グレイヴが姿を現す。</p>
                     <div class="flex flex-wrap gap-1">
@@ -801,9 +1082,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">廃園の逃走</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Flight Through the Ruins</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv07_subway_chase.webp" alt="Ch5 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv07_subway_chase.webp" alt="第5章 廃園の逃走 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>守るために、置いていかれる夜がある。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">グレイヴの追撃から逃走。マーサが身を挺して時間を稼ぎ、二人は浮遊群島への道へ。</p>
                     <div class="flex flex-wrap gap-1">
@@ -820,9 +1102,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">空の道標</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Waymarks in the Sky</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv08_sky_archipelago.webp" alt="Ch6 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv08_sky_archipelago.webp" alt="第6章 空の道標 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>失われた島々が、行き先を指し示す。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">浮遊群島に足を踏み入れ、壮大な光景を目にする二人。シルアの歌の力の代償も明らかに。</p>
                     <div class="flex flex-wrap gap-1">
@@ -839,9 +1122,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">父の影</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Shadow of the Father</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv10_ruined_lab.webp" alt="Ch7 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv10_ruined_lab.webp" alt="第7章 父の影 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>敵の名は、知ってはいけないものだった。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">朽ちた研究施設で父の研究ノートを発見。グレイヴとの因縁、リリアとの繋がりが明かされる。</p>
                     <div class="flex flex-wrap gap-1">
@@ -858,9 +1142,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">聖域の門</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Gate of the Sanctuary</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv12_gate_song.webp" alt="Ch8 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv12_gate_song.webp" alt="第8章 聖域の門 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>歌を捧げれば、世界は喰われる。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">聖域の門前でシルアが全力で歌う。グレイヴが鎖を切断し島を落とそうとする最大の危機。</p>
                     <div class="flex flex-wrap gap-1">
@@ -877,9 +1162,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">暁の声</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Voice of the Dawn</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv14_mother_reunion.webp" alt="Ch9 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv14_mother_reunion.webp" alt="第9章 暁の声 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>失ったものの数だけ、空は澄み渡る。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">リリアの聖域でシルアが母と再会。リリアは完全な歌の記憶を託し、光となって消えていく。</p>
                     <div class="flex flex-wrap gap-1">
@@ -896,9 +1182,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">反重力</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">Anti-Gravity</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv16_fusion.webp" alt="Ch10 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv16_fusion.webp" alt="第10章 反重力 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>重荷を手放した瞬間、心は空を超える。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">シルアの完全な歌とルカの覚醒した力が融合。アンカーが「調和」モードに切り替わるクライマックス。</p>
                     <div class="flex flex-wrap gap-1">
@@ -915,9 +1202,10 @@
                     </div>
                     <h4 class="font-bold text-gray-800 mb-1">空に還る日</h4>
                     <p class="text-xs text-gray-500 font-eng mb-3">The Day We Return to the Sky</p>
-                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative">
-                        <img src="./images/kv17_extended_hand.webp" alt="Ch11 KV" loading="lazy"
+                    <div class="h-40 mb-3 overflow-hidden rounded-lg relative chapter-kv">
+                        <img src="./images/kv17_extended_hand.webp" alt="第11章 空に還る日 キービジュアル" loading="lazy"
                             class="w-full h-full object-cover">
+                        <div class="chapter-overlay" aria-hidden="true"><p>ようやく、フードを下ろせる朝が来た。</p></div>
                     </div>
                     <p class="text-sm text-gray-600 leading-relaxed mb-3">ルカがグレイヴに手を差し伸べる。フードを脱ぎ空を見上げる、穏やかで希望に満ちた結末。</p>
                     <div class="flex flex-wrap gap-1">
@@ -1097,6 +1385,35 @@
                     </p>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Crowdfunding Teaser Banner (W-04) -->
+    <section id="crowdfunding-teaser" class="py-12 px-4 bg-gradient-to-r from-amber-50 via-orange-50 to-rose-50 border-t border-amber-100">
+        <div class="max-w-5xl mx-auto">
+            <div class="bg-white rounded-2xl shadow-md border border-amber-200 p-6 md:p-8 fade-in-up">
+                <div class="flex flex-col md:flex-row items-start md:items-center gap-6">
+                    <div class="shrink-0 w-14 h-14 rounded-full bg-gradient-to-br from-amber-400 to-rose-400 flex items-center justify-center text-white text-2xl shadow-md" aria-hidden="true">
+                        &#9733;
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-2 mb-2">
+                            <span class="font-eng text-amber-600 tracking-widest text-xs font-bold uppercase">Coming Soon</span>
+                            <span class="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-eng font-bold rounded-full">CF 2026.10</span>
+                        </div>
+                        <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-2">クラウドファンディング始動準備中</h3>
+                        <p class="text-sm text-gray-600 leading-relaxed">
+                            5分パイロット版の公開と同時に、本編シリーズ制作のためのクラウドファンディングを開始予定です。<br class="hidden md:inline">
+                            支援者限定の絵コンテ集・楽曲音源・キャラクター設定資料などのリターンを準備中です。
+                        </p>
+                    </div>
+                    <a href="#newsletter-section"
+                        class="shrink-0 px-6 py-3 bg-amber-500 text-white rounded-full text-sm font-bold hover:bg-amber-600 transition shadow-md whitespace-nowrap">
+                        開始通知を受け取る
+                    </a>
+                </div>
+            </div>
+        </div>
     </section>
 
     <!-- Newsletter + Support -->
@@ -1105,10 +1422,11 @@
 
             <!-- メール登録（最重要CTA） -->
             <div class="text-center mb-16 fade-in-up">
-                <span class="font-eng text-indigo-400 tracking-widest text-sm font-bold uppercase mb-2 block">Newsletter</span>
-                <h3 class="text-2xl font-bold mb-4 text-gray-800">最新情報をお届けします</h3>
+                <span class="font-eng text-indigo-400 tracking-widest text-sm font-bold uppercase mb-2 block">Newsletter — Early Access</span>
+                <h3 class="text-2xl font-bold mb-4 text-gray-800">パイロット版公開を、誰よりも先に。</h3>
                 <p class="text-gray-600 mb-6 leading-relaxed text-sm">
-                    クラウドファンディング開始・新章公開・イベント情報を<br>いち早くメールでお届けします。
+                    5分パイロット版の公開タイミング・予告編・クラウドファンディング開始を<br>
+                    一般公開より先に、メールでお知らせします。
                 </p>
                 <!-- Mailchimp連携フォーム -->
                 <form id="newsletter-form"
@@ -1158,22 +1476,30 @@
                         </div>
                         <span class="text-green-500 text-lg">&#10003;</span>
                     </div>
-                    <div class="flex items-center gap-4 bg-indigo-50 p-4 rounded-xl border-2 border-indigo-300">
-                        <div class="w-10 h-10 bg-indigo-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0 animate-pulse">3</div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-green-200">
+                        <div class="w-10 h-10 bg-green-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">3</div>
                         <div class="flex-1">
-                            <p class="font-bold text-gray-800 text-sm">ストーリー全11章 執筆中</p>
-                            <p class="text-xs text-indigo-600">現在進行中</p>
+                            <p class="font-bold text-gray-800 text-sm">ストーリー全11章 構成確定</p>
+                            <p class="text-xs text-green-600">完了</p>
                         </div>
+                        <span class="text-green-500 text-lg">&#10003;</span>
                     </div>
-                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200 opacity-60">
-                        <div class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">4</div>
+                    <div class="flex items-center gap-4 bg-indigo-50 p-4 rounded-xl border-2 border-indigo-300">
+                        <div class="w-10 h-10 bg-indigo-500 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0 animate-pulse">4</div>
                         <div class="flex-1">
-                            <p class="font-bold text-gray-600 text-sm">クラウドファンディング開始（Kickstarter / CAMPFIRE）</p>
-                            <p class="text-xs text-gray-400">今後の予定</p>
+                            <p class="font-bold text-gray-800 text-sm">5分パイロット版アニメーション制作中</p>
+                            <p class="text-xs text-indigo-600">2026.10.17 公開予定 — <a href="#pilot" class="underline hover:text-indigo-800">進捗を見る</a></p>
                         </div>
                     </div>
                     <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200 opacity-60">
                         <div class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">5</div>
+                        <div class="flex-1">
+                            <p class="font-bold text-gray-600 text-sm">クラウドファンディング開始（Kickstarter / CAMPFIRE）</p>
+                            <p class="text-xs text-gray-400">パイロット版公開と同時</p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 bg-white p-4 rounded-xl border border-gray-200 opacity-60">
+                        <div class="w-10 h-10 bg-gray-300 text-white rounded-full flex items-center justify-center text-sm font-bold shrink-0">6</div>
                         <div class="flex-1">
                             <p class="font-bold text-gray-600 text-sm">ファンクラブ開設（Pixiv FANBOX / Patreon）</p>
                             <p class="text-xs text-gray-400">今後の予定</p>
@@ -1225,8 +1551,12 @@
             <div class="text-center mb-10">
                 <span
                     class="font-eng text-gray-400 tracking-widest text-sm font-bold uppercase mb-2 block">Community</span>
-                <h2 class="text-2xl font-bold text-gray-800">Comments</h2>
-                <p class="text-sm text-gray-500 mt-2">GitHubアカウントでコメントできます</p>
+                <h2 class="text-2xl font-bold text-gray-800">あなたの感想を聞かせてください</h2>
+                <p class="text-sm text-gray-600 mt-3 max-w-xl mx-auto leading-relaxed">
+                    気になった章・好きなキャラクター・「名前のない歌」が描かれる第2章への期待など、<br class="hidden md:inline">
+                    どんな短い一言でも制作の励みになります。
+                </p>
+                <p class="text-xs text-gray-400 mt-3">GitHubアカウントでコメント可能 / 匿名感想はNewsletter登録時の返信メールへ</p>
             </div>
 
             <!-- giscus コメントウィジェット -->
@@ -1382,6 +1712,39 @@
                 }
             });
         });
+
+        // パイロット版公開カウントダウン (2026-10-17 12:00 JST)
+        (function() {
+            const target = new Date('2026-10-17T12:00:00+09:00').getTime();
+            const elDays = document.getElementById('pilot-days');
+            const elHours = document.getElementById('pilot-hours');
+            const elMinutes = document.getElementById('pilot-minutes');
+            const elSeconds = document.getElementById('pilot-seconds');
+            if (!elDays || !elHours || !elMinutes || !elSeconds) return;
+
+            function pad(n) { return String(n).padStart(2, '0'); }
+
+            function update() {
+                const diff = target - Date.now();
+                if (diff <= 0) {
+                    elDays.textContent = '00';
+                    elHours.textContent = '00';
+                    elMinutes.textContent = '00';
+                    elSeconds.textContent = '00';
+                    return;
+                }
+                const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+                const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+                const minutes = Math.floor((diff / (1000 * 60)) % 60);
+                const seconds = Math.floor((diff / 1000) % 60);
+                elDays.textContent = pad(days);
+                elHours.textContent = pad(hours);
+                elMinutes.textContent = pad(minutes);
+                elSeconds.textContent = pad(seconds);
+            }
+            update();
+            setInterval(update, 1000);
+        })();
     </script>
 </body>
 
